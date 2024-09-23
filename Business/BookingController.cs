@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookingSystem.Data;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -9,32 +10,21 @@ namespace BookingSystem.Business
 {
     internal class BookingController
     {
-            private HotelManagementDB hoteManagementDB; //reference
+        private HotelManagementDB hotelManagementDB; // Reference to HotelManagementDB
+        private Collection<Booking> bookings;
 
-            private Collection<Booking> bookings;
+        // Constructor
+        public BookingController()
+        {
+            hotelManagementDB = new HotelManagementDB(); // Initialize correctly
+            bookings = new Collection<Booking>();
+        }
 
-            //constructor
-            public BookingController()
-            {
-                HotelManagementDB = new HotelManagementDB();
-                bookings = new Collection<Booking>();
+        #region Database Communication 
 
-            }
-
-            #region Database Communication
-
-            public void DataMaintenance(Employee anEmp)
-            {
-                employeeDB.DataSetChange(anEmp);
-                employees.Add(anEmp);
-            }
-
-            public bool FinalizeChanges(Employee employee)
-            {
-                return employeeDB.UpdateDataSource(employee);
-            }
-
-            #endregion
+        public void DataMaintence(Booking anBK)
+        {
+            hotelManagementDB.DataSetChange()
         }
     }
 }
