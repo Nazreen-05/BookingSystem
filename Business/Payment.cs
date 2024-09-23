@@ -9,28 +9,37 @@ namespace BookingSystem.Business
     public class Payment
     {
         #region Data Members
-        private string paymentID;
-        private decimal amount;
+        private string paymentId;
+        private string guestId;
+        private string bookingId;
+        private decimal paymentAmount;
         private DateTime paymentDate;
         private string paymentMethod;
-        private string bookingID;
-
         #endregion
 
-
         #region Property Methods
-        
         public string PaymentID
         {
-            get { return paymentID; }
-            set { paymentID = value; }
-
+            get { return paymentId; }
+            set { paymentId = value; }
         }
 
-        public decimal Amount
+        public string GuestID
         {
-            get { return amount; }
-            set { amount = value; }
+            get { return guestId; }
+            set { guestId = value; }
+        }
+
+        public string BookingID
+        {
+            get { return bookingId; }
+            set { bookingId = value; }
+        }
+
+        public decimal PaymentAmount
+        {
+            get { return paymentAmount; }
+            set { paymentAmount = value; }
         }
 
         public DateTime PaymentDate
@@ -44,35 +53,22 @@ namespace BookingSystem.Business
             get { return paymentMethod; }
             set { paymentMethod = value; }
         }
-
-        public string BookingID
-        {
-            get { return bookingID; }
-            set { bookingID = value; }
-        }
         #endregion
 
         #region Constructor
-        public Payment(string paymentId, decimal amount, DateTime paymentDate, string paymentMethod, string bookingId)
+        public Payment(string paymentId, string guestId, string bookingId, decimal paymentAmount, DateTime paymentDate, string paymentMethod)
         {
-            this.paymentID = paymentId;
-            this.amount = amount;
+            this.paymentId = paymentId;
+            this.guestId = guestId;
+            this.bookingId = bookingId;
+            this.paymentAmount = paymentAmount;
             this.paymentDate = paymentDate;
             this.paymentMethod = paymentMethod;
-            this.bookingID = bookingId;
         }
         #endregion
 
-        #region Methods
-        public void DisplayPaymentDetails()
-        {
-            Console.WriteLine($"Payment ID: {PaymentID}");
-            Console.WriteLine($"Amount: {Amount}");
-            Console.WriteLine($"Payment Date: {PaymentDate.ToShortDateString()}");
-            Console.WriteLine($"Payment Method: {PaymentMethod}");
-            Console.WriteLine($"Booking ID: {BookingID}");
-        }
-        #endregion
+
+
 
 
 
