@@ -13,27 +13,35 @@ namespace BookingSystem.Data
 {
     internal class DB
     {
-        //edit after database is created
-       // string strConn = Settings.Default.EmployeeDatabaseConnectionString;
-        DataSet dsMain = new DataSet();
-        SqlConnection cnMain = new SqlConnection(@"");
-        SqlDataAdapter daMain = new SqlDataAdapter();
+        #region Variables
+        //***Once the database is created you can find the correct connection string by using the Settings.Default object to select the correct connection string
+        private string strConn = Settings.Default.HotelManagementDBConnectionString;
+        protected SqlConnection cnMain;
+        protected DataSet dsMain;
+        protected SqlDataAdapter daMain;
+        #endregion
 
-        public DB() //constructor
+        #region Constructor
+        public DB()
         {
             try
             {
-                cnMain.Open();
+                // opens a connection and creates object
+                cnMain = new SqlConnection(strConn);
                 dsMain = new DataSet();
             }
-            catch (Exception err0bj)
+            catch (SystemException e)
             {
-                MessageBox.Show(err0bj.Message);
+                System.Windows.Forms.MessageBox.Show(e.Message, "Error");
+                return;
             }
         }
+        #endregion
 
+        #region Update the DateSet
         public void FillDataSet(string aSQLstring, string aTable)
         {
+            //refreshes and fills dataset from database 
             try
             {
                 daMain = new SqlDataAdapter(aSQLstring, cnMain);
@@ -42,38 +50,40 @@ namespace BookingSystem.Data
                 daMain.Fill(dsMain, aTable);
                 cnMain.Close();
             }
-            catch (Exception err0bj)
+            catch (Exception errObj)
             {
-                MessageBox.Show(err0bj.Message + " " + err0bj.StackTrace);
+                MessageBox.Show(errObj.Message + "  " + errObj.StackTrace);
             }
         }
 
+        #endregion
+
+        #region Update the data source 
         public bool UpdateDataSource(string sqlLocal, string table)
         {
-            bool success = false;
-
+            bool success;
             try
             {
+                //open connection
                 cnMain.Open();
-                SqlCommandBuilder UpdateDatabase = new SqlCommandBuilder(daMain);
+                //***update the database table via the data adapter
                 daMain.Update(dsMain, table);
-
+                //---close the connection
                 cnMain.Close();
-
+                //refresh the dataset
                 FillDataSet(sqlLocal, table);
-
                 success = true;
             }
-            catch (Exception err0bj)
+            catch (Exception errObj)
             {
-                MessageBox.Show(err0bj.Message + " " + err0bj.StackTrace);
+                MessageBox.Show(errObj.Message + "  " + errObj.StackTrace);
+                success = false;
             }
             finally
             {
             }
             return success;
-
-
         }
+        #endregion
     }
-}//lol
+}
