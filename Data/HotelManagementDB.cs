@@ -36,6 +36,14 @@ namespace BookingSystem.Data
         private string sqlLocal8 = "SELECT * FROM Userlogin";
 
         private Collection<Booking> bookings;
+        private Collection<Guest> guests;
+        
+
+
+        public Collection<Guest> AllGuests
+        {
+            get { return guests; }
+        }
 
         public Collection<Booking> AllBookings
         {
