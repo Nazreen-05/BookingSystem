@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace BookingSystem.Data
 {
-    internal class DB
+    public class DB
     {
         #region Variables
         //***Once the database is created you can find the correct connection string by using the Settings.Default object to select the correct connection string
@@ -85,5 +85,17 @@ namespace BookingSystem.Data
             return success;
         }
         #endregion
+
+        public enum DBOperation
+        {
+            Add,
+            Edit,
+            Delete
+        }
+
+
+
+
+
     }
 }
