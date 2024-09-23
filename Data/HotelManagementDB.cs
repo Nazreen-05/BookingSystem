@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookingSystem.Business;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
@@ -39,13 +40,11 @@ namespace BookingSystem.Data
         public Collection<Booking> AllBookings
         {
             get { return bookings; }
-
         }
 
         public HotelManagementDB()
         {
-            bookings = new Collection<Booking>(); // collection
-
+            bookings = new Collection<Booking>(); // Initialize the collection correctly
             FillDataSet(sqlLocal1, table1);
             Add2Collection(table1);
 
@@ -54,8 +53,7 @@ namespace BookingSystem.Data
 
             FillDataSet(sqlLocal3, table3);
             Add2Collection(table3);
-
-        }*/
+        }
 
 
         #region Utility Methods

@@ -8,6 +8,7 @@ namespace BookingSystem.Business
 {
     internal class Guest
     {
+
         
     }
 }
