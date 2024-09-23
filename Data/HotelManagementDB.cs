@@ -37,6 +37,7 @@ namespace BookingSystem.Data
 
         private Collection<Booking> bookings;
         private Collection<Guest> guests;
+        private Collection<Payment> payment;
         
 
 
@@ -48,6 +49,12 @@ namespace BookingSystem.Data
         public Collection<Booking> AllBookings
         {
             get { return bookings; }
+        }
+
+
+        public Collection<Payment> AllPayment
+        {
+            get { return payment; }
         }
 
         public HotelManagementDB()
