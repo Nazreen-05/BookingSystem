@@ -64,7 +64,7 @@ namespace BookingSystem.Data
             guests = new Collection<Guest>();
             payments = new Collection<Payment>();
             //roomServices = new Collection<RoomService>();
-            //rooms = new Collection<Room>();
+            rooms = new Collection<Room>();
             //seasons = new Collection<Season>();
             //staff = new Collection<Staff>();
             //userLogins = new Collection<UserLogin>();
@@ -104,7 +104,7 @@ namespace BookingSystem.Data
 
         private void Add2Collection(string table)
         {
-            DataRow myRow = null;
+          //  DataRow myRow = null;
             switch (table)
             {
                 case "Booking":
@@ -158,6 +158,21 @@ namespace BookingSystem.Data
                             payment.PaymentDate = Convert.ToDateTime(row["payment_date"]);
                             payment.PaymentMethod = row["payment_method"].ToString().Trim();
                             payments.Add(payment);
+                        }
+                    }
+                    break;
+
+
+                case "Rooms":
+                    foreach (DataRow row in dsMain.Tables[table].Rows)
+                    {
+                        if (!(row.RowState == DataRowState.Deleted))
+                        {
+                            Room room = new Room();
+                            room.RoomID = row["room_id"].ToString().Trim();
+                            room.Avail = row["is_available"].ToString().Trim();
+                            room.PricePerNight = Convert.ToDecimal(row["price_per_night"]);
+                            Rooms.Add(room);
                         }
                     }
                     break;
@@ -234,6 +249,12 @@ namespace BookingSystem.Data
                 aRow["payment_date"] = payment.PaymentDate;
                 aRow["payment_method"] = payment.PaymentMethod;
             }
+            else if (obj is Room room)
+            {
+                aRow["roomId"] = room.RoomID;
+                aRow["is_available"] = room.Avail;
+                aRow["price_per_night"] = room.PricePerNight;
+            }
 
 
         }
@@ -293,6 +314,8 @@ namespace BookingSystem.Data
             success &= UpdateDataSource(sqlLocal1, table1);
             success &= UpdateDataSource(sqlLocal2, table2);
             success &= UpdateDataSource(sqlLocal3, table3);
+            success &= UpdateDataSource(sqlLocal4, table4); //room
+            success &= UpdateDataSource(sqlLocal5, table5); //season
             // Add other tables...
 
             return success;

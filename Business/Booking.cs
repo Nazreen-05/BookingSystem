@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BookingSystem.Business
 {
-    internal class Booking
+    public class Booking
     {
         #region Data Members
         private string bookingId;
