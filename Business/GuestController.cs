@@ -10,6 +10,7 @@ namespace BookingSystem.Business
 {
     internal class GuestController
     {
+        /*
         #region Data Members
         private HotelManagementDB guestDB; // Data access object to communicate with the database
         private Collection<Guest> guests; // Collection to hold all guest objects
@@ -97,5 +98,6 @@ namespace BookingSystem.Business
             return found ? counter : -1;
         }
         #endregion
+        */
     }
 }

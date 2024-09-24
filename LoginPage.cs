@@ -15,6 +15,7 @@ namespace BookingSystem
         public LoginPage()
         {
             InitializeComponent();
+            txtPassword.UseSystemPasswordChar = true;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -50,6 +51,46 @@ namespace BookingSystem
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void pictureBoxShow_Click(object sender, EventArgs e)
+        {
+            pictureBoxShow.Hide();
+            txtPassword.UseSystemPasswordChar = true;
+            pictureBoxHide.Show();
+
+        }
+
+        private void pictureBoxHide_Click(object sender, EventArgs e)
+        {
+            pictureBoxHide.Hide();
+            txtPassword.UseSystemPasswordChar = false;
+            pictureBoxShow.Show();
+        }
+
+        private void pictureBox1_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(pictureBox1, "Minimize");
+        }
+
+        private void pBclose_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(pBclose, "Close");
+        }
+
+        private void btnLogin_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(btnLogin, "Log in");
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

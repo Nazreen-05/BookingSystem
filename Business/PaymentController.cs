@@ -10,6 +10,7 @@ namespace BookingSystem.Business
 {
     public class PaymentController
     {
+        /*
         #region Data Members
         private HotelManagementDB paymentDB; // Data access object to communicate with HotelManagementDB
         private Collection<Payment> payments; // Collection to hold all payment objects
@@ -97,5 +98,6 @@ namespace BookingSystem.Business
             return found ? counter : -1;
         }
         #endregion
+        */
     }
 }

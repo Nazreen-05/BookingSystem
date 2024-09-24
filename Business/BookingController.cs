@@ -10,6 +10,7 @@ namespace BookingSystem.Business
 {
     internal class BookingController
     {
+        /*
         #region Data Members
         private HotelManagementDB bookingDB; // Data access object to communicate with HotelManagementDB
         private Collection<Booking> bookings; // Collection to hold all booking objects
@@ -97,5 +98,6 @@ namespace BookingSystem.Business
             return found ? counter : -1;
         }
         #endregion
+        */
     }
 }

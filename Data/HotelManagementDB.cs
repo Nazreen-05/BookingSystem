@@ -11,6 +11,7 @@ namespace BookingSystem.Data
 {
     internal class HotelManagementDB : DB
     {
+        /*
         #region Data Members
         private string table1 = "Booking";
         private string sqlLocal1 = "SELECT * FROM Booking";
@@ -323,5 +324,6 @@ namespace BookingSystem.Data
     }
 
 
-
+    */
+    }
 }
