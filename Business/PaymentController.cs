@@ -27,7 +27,7 @@ namespace BookingSystem.Business
         // Constructor to instantiate the HotelManagementDB object and initialize the payment collection
         public PaymentController()
         {
-            paymentDB= new HotelManagementDB(); // Instantiate the data access object
+            paymentDB = new HotelManagementDB(); // Instantiate the data access object
             payments = paymentDB.AllPayment; // Fetch all payments from the database
         }
         #endregion
@@ -98,3 +98,4 @@ namespace BookingSystem.Business
         }
         #endregion
     }
+}

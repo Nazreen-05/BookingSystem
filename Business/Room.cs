@@ -33,6 +33,8 @@ namespace BookingSystem.Business
             set { price_per_night = value; }
         }
 
+        #endregion
+
         #region Constructor
         public Room(string roomId, string is_available, decimal price_per_night)
         {

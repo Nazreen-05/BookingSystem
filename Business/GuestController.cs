@@ -37,7 +37,7 @@ namespace BookingSystem.Business
         public void DataMaintenance(Guest aGuest, DB.DBOperation operation)
         {
             int index = 0;
-            hotelManagementDB.DataSetChange(aGuest, operation);
+            //hotelManagementDB.DataSetChange(aGuest, operation);
 
             switch (operation)
             {
@@ -62,9 +62,9 @@ namespace BookingSystem.Business
         }
 
         // Method to commit changes to the database
-        public bool FinalizeChanges()
+         public bool FinalizeChanges()
         {
-            return hotelManagementD.UpdateDataSource();
+           return hotelManagementD.UpdateDataSource();
         }
         #endregion
 

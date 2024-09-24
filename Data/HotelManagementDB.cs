@@ -64,7 +64,7 @@ namespace BookingSystem.Data
             guests = new Collection<Guest>();
             payments = new Collection<Payment>();
             //roomServices = new Collection<RoomService>();
-            rooms = new Collection<Room>();
+            //rooms = new Collection<Room>();
             //seasons = new Collection<Season>();
             //staff = new Collection<Staff>();
             //userLogins = new Collection<UserLogin>();
