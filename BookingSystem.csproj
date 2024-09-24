@@ -62,6 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\Booking.cs" />
+    <Compile Include="Business\BookingController.cs" />
+    <Compile Include="Business\Guest.cs" />
     <Compile Include="Data\DB.cs" />
     <Compile Include="Data\HotelManagementDB.cs" />
     <Compile Include="Form1.cs">

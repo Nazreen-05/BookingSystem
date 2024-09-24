@@ -34,7 +34,7 @@ namespace BookingSystem.Data
         private string table8 = "Userlogin";
         private string sqlLocal8 = "SELECT * FROM Userlogin";
 
-     /*   private Collection<Booking> bookings;
+        private Collection<Booking> bookings;
 
         public Collection<Booking> AllBookings
         {
