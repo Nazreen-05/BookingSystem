@@ -103,5 +103,15 @@ namespace BookingSystem.Presentation
                 childForm.Close();
             }
         }
+
+        private void HotelMangementMDI_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookingSystem.Presentation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -91,6 +92,16 @@ namespace BookingSystem
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form = new HotelMangementMDI();
+            form.ShowDialog();
+            this.Show();
+
+
         }
     }
 }

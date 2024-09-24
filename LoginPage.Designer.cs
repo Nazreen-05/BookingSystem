@@ -35,14 +35,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gBLogin = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBoxShow = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBoxHide = new System.Windows.Forms.PictureBox();
+            this.pictureBoxShow = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -51,8 +51,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBclose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gBLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHide)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShow)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -102,7 +102,7 @@
             this.gBLogin.Controls.Add(this.label3);
             this.gBLogin.Controls.Add(this.txtPassword);
             this.gBLogin.Controls.Add(this.btnLogin);
-            this.gBLogin.Controls.Add(this.textBox1);
+            this.gBLogin.Controls.Add(this.txtUsername);
             this.gBLogin.Controls.Add(this.label2);
             this.gBLogin.Controls.Add(this.pictureBoxHide);
             this.gBLogin.Controls.Add(this.pictureBoxShow);
@@ -115,23 +115,36 @@
             this.gBLogin.TabStop = false;
             this.gBLogin.Text = "Login ";
             // 
-            // label2
+            // label4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(49, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 19);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Username:";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.SandyBrown;
+            this.label4.Location = new System.Drawing.Point(141, 217);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(141, 19);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Forgot Password?";
+            this.label4.UseWaitCursor = true;
             // 
-            // textBox1
+            // label3
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(53, 77);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(328, 27);
-            this.textBox1.TabIndex = 1;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(49, 129);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 19);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Password:";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPassword.Location = new System.Drawing.Point(53, 153);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(289, 27);
+            this.txtPassword.TabIndex = 3;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // btnLogin
             // 
@@ -146,50 +159,26 @@
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Log in";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             this.btnLogin.MouseHover += new System.EventHandler(this.btnLogin_MouseHover);
             // 
-            // txtPassword
+            // txtUsername
             // 
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPassword.Location = new System.Drawing.Point(53, 153);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(289, 27);
-            this.txtPassword.TabIndex = 3;
-            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUsername.Location = new System.Drawing.Point(53, 77);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(328, 27);
+            this.txtUsername.TabIndex = 1;
             // 
-            // label3
+            // label2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(49, 129);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 19);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Password:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.SandyBrown;
-            this.label4.Location = new System.Drawing.Point(141, 217);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(141, 19);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Forgot Password?";
-            this.label4.UseWaitCursor = true;
-            // 
-            // pictureBoxShow
-            // 
-            this.pictureBoxShow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxShow.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxShow.Image")));
-            this.pictureBoxShow.Location = new System.Drawing.Point(348, 153);
-            this.pictureBoxShow.Name = "pictureBoxShow";
-            this.pictureBoxShow.Size = new System.Drawing.Size(33, 27);
-            this.pictureBoxShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxShow.TabIndex = 4;
-            this.pictureBoxShow.TabStop = false;
-            this.pictureBoxShow.Click += new System.EventHandler(this.pictureBoxShow_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(49, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 19);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Username:";
             // 
             // pictureBoxHide
             // 
@@ -202,6 +191,18 @@
             this.pictureBoxHide.TabIndex = 6;
             this.pictureBoxHide.TabStop = false;
             this.pictureBoxHide.Click += new System.EventHandler(this.pictureBoxHide_Click);
+            // 
+            // pictureBoxShow
+            // 
+            this.pictureBoxShow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxShow.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxShow.Image")));
+            this.pictureBoxShow.Location = new System.Drawing.Point(348, 153);
+            this.pictureBoxShow.Name = "pictureBoxShow";
+            this.pictureBoxShow.Size = new System.Drawing.Size(33, 27);
+            this.pictureBoxShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxShow.TabIndex = 4;
+            this.pictureBoxShow.TabStop = false;
+            this.pictureBoxShow.Click += new System.EventHandler(this.pictureBoxShow_Click);
             // 
             // panel1
             // 
@@ -273,8 +274,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gBLogin.ResumeLayout(false);
             this.gBLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHide)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShow)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -293,7 +294,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBoxHide;
         private System.Windows.Forms.PictureBox pictureBoxShow;
