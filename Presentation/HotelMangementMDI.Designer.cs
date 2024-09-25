@@ -64,6 +64,12 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.bookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addGuestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listAllGuestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listAllBookingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -95,7 +101,9 @@
             this.viewMenu,
             this.toolsMenu,
             this.windowsMenu,
-            this.helpMenu});
+            this.helpMenu,
+            this.bookingToolStripMenuItem,
+            this.guestToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
@@ -361,6 +369,52 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
+            // bookingToolStripMenuItem
+            // 
+            this.bookingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addBookingToolStripMenuItem,
+            this.listAllBookingsToolStripMenuItem});
+            this.bookingToolStripMenuItem.Name = "bookingToolStripMenuItem";
+            this.bookingToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.bookingToolStripMenuItem.Text = "Booking";
+            // 
+            // guestToolStripMenuItem
+            // 
+            this.guestToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addGuestToolStripMenuItem,
+            this.listAllGuestsToolStripMenuItem});
+            this.guestToolStripMenuItem.Name = "guestToolStripMenuItem";
+            this.guestToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.guestToolStripMenuItem.Text = "Guest";
+            // 
+            // addGuestToolStripMenuItem
+            // 
+            this.addGuestToolStripMenuItem.Name = "addGuestToolStripMenuItem";
+            this.addGuestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addGuestToolStripMenuItem.Text = "Add guest";
+            this.addGuestToolStripMenuItem.Click += new System.EventHandler(this.addGuestToolStripMenuItem_Click);
+            // 
+            // listAllGuestsToolStripMenuItem
+            // 
+            this.listAllGuestsToolStripMenuItem.Name = "listAllGuestsToolStripMenuItem";
+            this.listAllGuestsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listAllGuestsToolStripMenuItem.Text = "List all guests";
+            this.listAllGuestsToolStripMenuItem.Click += new System.EventHandler(this.listAllGuestsToolStripMenuItem_Click);
+            // 
+            // addBookingToolStripMenuItem
+            // 
+            this.addBookingToolStripMenuItem.Name = "addBookingToolStripMenuItem";
+            this.addBookingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addBookingToolStripMenuItem.Text = "Add Booking";
+            this.addBookingToolStripMenuItem.Click += new System.EventHandler(this.addBookingToolStripMenuItem_Click);
+            // 
+            // listAllBookingsToolStripMenuItem
+            // 
+            this.listAllBookingsToolStripMenuItem.Name = "listAllBookingsToolStripMenuItem";
+            this.listAllBookingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listAllBookingsToolStripMenuItem.Text = "List all bookings";
+            this.listAllBookingsToolStripMenuItem.Click += new System.EventHandler(this.listAllBookingsToolStripMenuItem_Click);
+            // 
             // newToolStripButton
             // 
             this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -607,6 +661,12 @@
         private System.Windows.Forms.ToolStripButton printPreviewToolStripButton;
         private System.Windows.Forms.ToolStripButton helpToolStripButton;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.ToolStripMenuItem bookingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addBookingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listAllBookingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem guestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addGuestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listAllGuestsToolStripMenuItem;
     }
 }
 

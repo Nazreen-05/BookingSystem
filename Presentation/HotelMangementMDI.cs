@@ -113,5 +113,35 @@ namespace BookingSystem.Presentation
         {
 
         }
+
+        private void addBookingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BookingForm bookingForm = new BookingForm();
+            bookingForm.MdiParent = this;
+
+            bookingForm.Show();
+        }
+
+        private void listAllBookingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BookingListingForm bookingForm = new BookingListingForm();
+            bookingForm.MdiParent = this;
+            bookingForm.Show();
+        }
+
+        private void addGuestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GuestForm guestForm = new GuestForm();
+            guestForm.MdiParent = this;
+            guestForm.Show();
+        }
+
+        private void listAllGuestsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GuestListing guestListingForm = new GuestListing();
+            guestListingForm.MdiParent = this;
+            guestListingForm.Show();
+
+        }
     }
 }

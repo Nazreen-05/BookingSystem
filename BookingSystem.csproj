@@ -77,6 +77,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HotelManagementDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\BookingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\BookingForm.Designer.cs">
+      <DependentUpon>BookingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\BookingListingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\BookingListingForm.Designer.cs">
+      <DependentUpon>BookingListingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\GuestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\GuestForm.Designer.cs">
+      <DependentUpon>GuestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\GuestListing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\GuestListing.Designer.cs">
+      <DependentUpon>GuestListing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +115,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentation\BookingListingForm.resx">
+      <DependentUpon>BookingListingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\GuestListing.resx">
+      <DependentUpon>GuestListing.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
