@@ -63,6 +63,10 @@ namespace BookingSystem.Business
         #endregion
 
         #region Constructor
+        public Guest()
+        {
+            //default constructor
+        }
         public Guest(string guestId, string name, string address, string phoneNumber, string email, string creditCardNumber, string loyaltyCardNumber)
         {
             this.guestId = guestId;

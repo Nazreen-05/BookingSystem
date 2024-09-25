@@ -68,7 +68,7 @@
     <Compile Include="Business\Payment.cs" />
     <Compile Include="Business\PaymentController.cs" />
     <Compile Include="Business\Room.cs" />
-    <Compile Include="Business\Seasons.cs" />
+    <Compile Include="Business\RoomRates.cs" />
     <Compile Include="Data\DB.cs" />
     <Compile Include="Data\HotelManagementDB.cs" />
     <Compile Include="HotelManagementDBDataSet.Designer.cs">
@@ -76,10 +76,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HotelManagementDBDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="LoginPage.cs">
+    <Compile Include="Presentation\LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginPage.Designer.cs">
+    <Compile Include="Presentation\LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\HotelMangementMDI.cs">
@@ -90,7 +90,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="LoginPage.resx">
+    <EmbeddedResource Include="Presentation\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\HotelMangementMDI.resx">

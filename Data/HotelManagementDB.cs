@@ -11,7 +11,7 @@ namespace BookingSystem.Data
 {
     internal class HotelManagementDB : DB
     {
-        /*
+        
         #region Data Members
         private string table1 = "Booking";
         private string sqlLocal1 = "SELECT * FROM Booking";
@@ -22,51 +22,39 @@ namespace BookingSystem.Data
         private string table3 = "Payments";
         private string sqlLocal3 = "SELECT * FROM Payments";
 
-        private string table4 = "RoomService";
-        private string sqlLocal4 = "SELECT * FROM RoomService";
+        private string table4 = "Rooms";
+        private string sqlLocal4 = "SELECT * FROM Rooms"; 
 
-        private string table5 = "Rooms";
-        private string sqlLocal5 = "SELECT * FROM Rooms"; // Assume single room type
+        private string table5 = "Staff";
+        private string sqlLocal5 = "SELECT * FROM Staff";
 
-        private string table6 = "Seasons";
-        private string sqlLocal6 = "SELECT * FROM Seasons"; // Could be taken out if not used
-
-        private string table7 = "Staff";
-        private string sqlLocal7 = "SELECT * FROM Staff";
-
-        private string table8 = "UserLogin";
-        private string sqlLocal8 = "SELECT * FROM UserLogin";
+        private string table6 = "UserLogin";
+        private string sqlLocal6 = "SELECT * FROM UserLogin";
 
         private Collection<Booking> bookings;
         private Collection<Guest> guests;
         private Collection<Payment> payments;
-        //private Collection<RoomService> roomServices;
-        //private Collection<Room> rooms;
-        //private Collection<Season> seasons;
+        private Collection<Room> rooms;
         //private Collection<Staff> staff;
         //private Collection<UserLogin> userLogins;
         #endregion
 
-        #region Properties
+        #region Properties : collection
         public Collection<Booking> AllBookings { get { return bookings; } }
         public Collection<Guest> AllGuests { get { return guests; } }
         public Collection<Payment> AllPayments { get { return payments; } }
-        // public Collection<RoomService> AllRoomServices { get { return roomServices; } }
-        // public Collection<Room> AllRooms { get { return rooms; } }
-        //public Collection<Season> AllSeasons { get { return seasons; } }
+        public Collection<Room> AllRooms { get { return rooms; } }
         //public Collection<Staff> AllStaff { get { return staff; } }
         // public Collection<UserLogin> AllUserLogins { get { return userLogins; } }
         #endregion
 
         #region Constructor
-        public HotelManagementDB()
+        public HotelManagementDB() : base()
         {
             bookings = new Collection<Booking>();
             guests = new Collection<Guest>();
             payments = new Collection<Payment>();
-            //roomServices = new Collection<RoomService>();
-            //rooms = new Collection<Room>();
-            //seasons = new Collection<Season>();
+            rooms = new Collection<Room>();
             //staff = new Collection<Staff>();
             //userLogins = new Collection<UserLogin>();
 
@@ -88,12 +76,6 @@ namespace BookingSystem.Data
 
             FillDataSet(sqlLocal6, table6);
             Add2Collection(table6);
-
-            FillDataSet(sqlLocal7, table7);
-            Add2Collection(table7);
-
-            FillDataSet(sqlLocal8, table8);
-            Add2Collection(table8);
         }
         #endregion
 
@@ -104,26 +86,28 @@ namespace BookingSystem.Data
         }
 
         private void Add2Collection(string table)
+            // populates collections with data from your database. Gets data from db, goes through row of each table , creates an objects and adds it to the collection
+            // populates properties in each tabel iterating through rows
+            // so that you are able to display , (operations include: search , edit and display)
         {
-          //  DataRow myRow = null;
+            DataSet ds = GetDataSet();
             switch (table)
             {
                 case "Booking":
-                    foreach (DataRow row in dsMain.Tables[table].Rows)
+                    foreach (DataRow row in ds.Tables[table].Rows)
                     {
                         if (!(row.RowState == DataRowState.Deleted))
                         {
-                            Booking booking = new Booking();
-                            booking.BookingID = row["booking_id"].ToString().Trim();
-                            booking.GuestID = row["guest_id"].ToString().Trim();
-                            booking.CheckInDate = Convert.ToDateTime(row["check_in_date"]);
-                            booking.CheckOutDate = Convert.ToDateTime(row["check_out_date"]);
-                            booking.RoomType = row["room_type"].ToString().Trim();
-                            booking.TotalCost = Convert.ToDecimal(row["total_cost"]);
-                            booking.DepositPaid = Convert.ToDecimal(row["deposit_paid"]);
-                            booking.BookingStatus = row["booking_status"].ToString().Trim();
-                            booking.Season = row["season"].ToString().Trim();
-                            bookings.Add(booking);
+                            Booking aBooking = new Booking();
+                            aBooking.BookingID = row["booking_id"].ToString().Trim();
+                            aBooking.GuestID = row["guest_id"].ToString().Trim();
+                            aBooking.CheckInDate = Convert.ToDateTime(row["check_in_date"]);
+                            aBooking.CheckOutDate = Convert.ToDateTime(row["check_out_date"]);
+                            aBooking.TotalCost = Convert.ToDecimal(row["total_cost"]);
+                            aBooking.DepositPaid = Convert.ToDecimal(row["deposit_paid"]);
+                            aBooking.BookingStatus = row["booking_status"].ToString().Trim();
+                            aBooking.Season = row["season"].ToString().Trim();
+                            bookings.Add(aBooking);
                         }
                     }
                     break;
@@ -147,7 +131,7 @@ namespace BookingSystem.Data
                     break;
 
                 case "Payments":
-                    foreach (DataRow row in dsMain.Tables[table].Rows)
+                    foreach (DataRow row in ds.Tables[table].Rows)
                     {
                         if (!(row.RowState == DataRowState.Deleted))
                         {
@@ -165,20 +149,18 @@ namespace BookingSystem.Data
 
 
                 case "Rooms":
-                    foreach (DataRow row in dsMain.Tables[table].Rows)
+                    foreach (DataRow row in ds.Tables[table].Rows)
                     {
                         if (!(row.RowState == DataRowState.Deleted))
                         {
                             Room room = new Room();
-                            room.RoomID = row["room_id"].ToString().Trim();
+                            room.RoomID = row["room_number"].ToString().Trim();
                             room.Avail = row["is_available"].ToString().Trim();
                             room.PricePerNight = Convert.ToDecimal(row["price_per_night"]);
-                            Rooms.Add(room);
+                            rooms.Add(room);
                         }
                     }
                     break;
-
-                    // You would repeat similar logic for "RoomService", "Rooms", "Seasons", "Staff", and "UserLogin"
                     // Ensure to create the correct objects and set the fields from your dataset
             }
         }
@@ -269,7 +251,7 @@ namespace BookingSystem.Data
             if (obj is Guest) dataTable = table2;
             else if (obj is Booking) dataTable = table1;
             else if (obj is Payment) dataTable = table3;
-            // Handle other cases for RoomService, Room, etc.
+            else if (obj is Room) dataTable = table4;
 
             switch (operation)
             {
@@ -315,15 +297,14 @@ namespace BookingSystem.Data
             success &= UpdateDataSource(sqlLocal1, table1);
             success &= UpdateDataSource(sqlLocal2, table2);
             success &= UpdateDataSource(sqlLocal3, table3);
-            success &= UpdateDataSource(sqlLocal4, table4); //room
-            success &= UpdateDataSource(sqlLocal5, table5); //season
-            // Add other tables...
+            success &= UpdateDataSource(sqlLocal4, table4); 
+            //  success &= UpdateDataSource(sqlLocal5, table5);
+            // success &= UpdateDataSource(sqlLocal6, table6);
 
             return success;
         }
     }
 
 
-    */
-    }
+
 }

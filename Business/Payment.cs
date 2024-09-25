@@ -56,6 +56,10 @@ namespace BookingSystem.Business
         #endregion
 
         #region Constructor
+        public Payment()
+        {
+            //default constructor
+        }
         public Payment(string paymentId, string guestId, string bookingId, decimal paymentAmount, DateTime paymentDate, string paymentMethod)
         {
             this.paymentId = paymentId;

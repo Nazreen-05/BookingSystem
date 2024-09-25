@@ -86,6 +86,10 @@ namespace BookingSystem.Business
         #endregion
 
         #region Constructor
+        public Booking()
+        {
+            //default constructor
+        }
         // Constructor including the new fields
         public Booking(string bookingId, string guestId, DateTime bookingDate, DateTime checkInDate, DateTime checkOutDate, string roomType, decimal totalCost, decimal depositPaid, string bookingStatus, string season)
         {

@@ -36,6 +36,10 @@ namespace BookingSystem.Business
         #endregion
 
         #region Constructor
+        public Room()
+        {
+            //default constructor
+        }
         public Room(string roomId, string is_available, decimal price_per_night)
         {
             this.roomId = roomId;
