@@ -211,7 +211,8 @@ namespace BookingSystem.Data
                 aRow["phone_number"] = guest.PhoneNumber;
                 aRow["email"] = guest.Email;
                 aRow["credit_card_number"] = guest.CreditCardNumber;
-                aRow["loyalty_card_number"] = guest.LoyaltyCardNumber;
+                
+                
             }
             else if (obj is Booking booking)
             {
@@ -348,32 +349,25 @@ namespace BookingSystem.Data
             //Create Parameters to communicate with SQL INSERT...add the input parameter and set its properties.
             //please insert code here , with correct properties
             SqlParameter param = default(SqlParameter);
-            param = new SqlParameter("@booking_id", SqlDbType.NVarChar, 15, "booking_id");
+            param = new SqlParameter("@guest_ID", SqlDbType.NVarChar, 15, "guest_ID");
             daMain.InsertCommand.Parameters.Add(param);//Add the parameter to the Parameters collection.
 
-            param = new SqlParameter("@guest_id", SqlDbType.NVarChar, 10, "guest_id");
+            param = new SqlParameter("@name", SqlDbType.NVarChar, 10, "name");
             daMain.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@booking_date", SqlDbType.DateTime, 10, "booking_date");
+            param = new SqlParameter("@address", SqlDbType.DateTime, 10, "address");
             daMain.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@check_in_date", SqlDbType.DateTime, 10, "@check_in_date");
+            param = new SqlParameter("@phone_number", SqlDbType.DateTime, 10, "phone_number");
             daMain.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@check_out_date", SqlDbType.DateTime, 10, "@check_out_date");
+            param = new SqlParameter("@email", SqlDbType.DateTime, 10, "email");
             daMain.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@total_cost", SqlDbType.Money, 8, "total_cost");
+            param = new SqlParameter("@credit_card_number", SqlDbType.Money, 8, "credit_card_number");
             daMain.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@deposit_paid", SqlDbType.Money, 8, "deposit_paid");
-            daMain.InsertCommand.Parameters.Add(param);
-
-            param = new SqlParameter("@booking_status", SqlDbType.NVarChar, 15, "booking_status");
-            daMain.InsertCommand.Parameters.Add(param);
-
-            param = new SqlParameter("@season", SqlDbType.NVarChar, 15, "season");
-            daMain.InsertCommand.Parameters.Add(param);
+           
 
        
         }
@@ -398,32 +392,22 @@ namespace BookingSystem.Data
             //Create Parameters to communicate with SQL INSERT...add the input parameter and set its properties.
             //please insert code here , with correct properties
             SqlParameter param = default(SqlParameter);
-            param = new SqlParameter("@booking_id", SqlDbType.NVarChar, 15, "booking_id");
+            param = new SqlParameter("@payment_id", SqlDbType.NVarChar, 15, "payment_id");
             daMain.InsertCommand.Parameters.Add(param);//Add the parameter to the Parameters collection.
 
             param = new SqlParameter("@guest_id", SqlDbType.NVarChar, 10, "guest_id");
             daMain.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@booking_date", SqlDbType.DateTime, 10, "booking_date");
+            param = new SqlParameter("@booking_id", SqlDbType.DateTime, 10, "booking_id");
             daMain.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@check_in_date", SqlDbType.DateTime, 10, "@check_in_date");
+            param = new SqlParameter("@payment_amount", SqlDbType.DateTime, 10, "payment_amount");
             daMain.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@check_out_date", SqlDbType.DateTime, 10, "@check_out_date");
+            param = new SqlParameter("@payment_method", SqlDbType.DateTime, 10, "payment_method");
             daMain.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@total_cost", SqlDbType.Money, 8, "total_cost");
-            daMain.InsertCommand.Parameters.Add(param);
-
-            param = new SqlParameter("@deposit_paid", SqlDbType.Money, 8, "deposit_paid");
-            daMain.InsertCommand.Parameters.Add(param);
-
-            param = new SqlParameter("@booking_status", SqlDbType.NVarChar, 15, "booking_status");
-            daMain.InsertCommand.Parameters.Add(param);
-
-            param = new SqlParameter("@season", SqlDbType.NVarChar, 15, "season");
-            daMain.InsertCommand.Parameters.Add(param);
+            
 
            
         }
@@ -448,32 +432,16 @@ namespace BookingSystem.Data
             //Create Parameters to communicate with SQL INSERT...add the input parameter and set its properties.
             //please insert code here , with correct properties
             SqlParameter param = default(SqlParameter);
-            param = new SqlParameter("@booking_id", SqlDbType.NVarChar, 15, "booking_id");
+            param = new SqlParameter("@room_number", SqlDbType.NVarChar, 15, "room_number");
             daMain.InsertCommand.Parameters.Add(param);//Add the parameter to the Parameters collection.
 
-            param = new SqlParameter("@guest_id", SqlDbType.NVarChar, 10, "guest_id");
+            param = new SqlParameter("@is_available", SqlDbType.NVarChar, 10, "is_available");
             daMain.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@booking_date", SqlDbType.DateTime, 10, "booking_date");
+            param = new SqlParameter("@pricer_per_night", SqlDbType.DateTime, 10, "price_per_night");
             daMain.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@check_in_date", SqlDbType.DateTime, 10, "@check_in_date");
-            daMain.InsertCommand.Parameters.Add(param);
-
-            param = new SqlParameter("@check_out_date", SqlDbType.DateTime, 10, "@check_out_date");
-            daMain.InsertCommand.Parameters.Add(param);
-
-            param = new SqlParameter("@total_cost", SqlDbType.Money, 8, "total_cost");
-            daMain.InsertCommand.Parameters.Add(param);
-
-            param = new SqlParameter("@deposit_paid", SqlDbType.Money, 8, "deposit_paid");
-            daMain.InsertCommand.Parameters.Add(param);
-
-            param = new SqlParameter("@booking_status", SqlDbType.NVarChar, 15, "booking_status");
-            daMain.InsertCommand.Parameters.Add(param);
-
-            param = new SqlParameter("@season", SqlDbType.NVarChar, 15, "season");
-            daMain.InsertCommand.Parameters.Add(param);
+           
 
        
         }
@@ -491,17 +459,7 @@ namespace BookingSystem.Data
             return UpdateDataSource(sqlLocal4, table4);
         }
 
-        /*
-        public bool UpdateDataSource(Staff aEmployee)
-        {
-            return UpdateDataSource(sqlLocal5, table5);
-        }
-
-        public bool UpdateDataSource(Userlogin aUser )
-        {
-            return UpdateDataSource(sqlLocal6, table6);
-        }
-        */
+      
 
 
 
