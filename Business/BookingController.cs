@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace BookingSystem.Business
 {
-    internal class BookingController
-    {
-        /*
+    public class BookingController
+    {      
         #region Data Members
         private HotelManagementDB bookingDB; // Data access object to communicate with HotelManagementDB
         private Collection<Booking> bookings; // Collection to hold all booking objects
@@ -63,9 +62,9 @@ namespace BookingSystem.Business
         }
 
         // Method to commit changes to the database
-        public bool FinalizeChanges()
+        public bool FinalizeChanges(Booking booking)
         {
-            return bookingDB.UpdateDataSource();
+            return bookingDB.UpdateDataSource(booking);
         }
         #endregion
 
@@ -75,29 +74,40 @@ namespace BookingSystem.Business
         {
             int index = 0;
             bool found = (bookings.Count > 0 && bookings[index].BookingID == bookingID);
-            while (!found && (index < bookings.Count - 1))
+            int count = bookings.Count;
+
+            while (!(found) && (index < bookings.Count - 1))
             {
                 index++;
                 found = (bookings[index].BookingID == bookingID);
             }
-            return found ? bookings[index] : null;
+            if (index >= bookings.Count)
+                return null;
+
+            return bookings[index];
         }
 
         // Find the index of a booking in the collection
         public int FindIndex(Booking aBooking)
         {
             int counter = 0;
-            bool found = (aBooking.BookingID == bookings[counter].BookingID);
-
-            while (!found && counter < bookings.Count - 1)
+            bool found = false;
+            found = (aBooking.BookingID == bookings[counter].BookingID);
+            while (!found && counter < bookings.Count)
             {
                 counter++;
                 found = (aBooking.BookingID == bookings[counter].BookingID);
             }
-
-            return found ? counter : -1;
+            if (found)
+            {
+                return counter;
+            }
+            else
+            {
+                return -1;
+            }
         }
         #endregion
-        */
+
     }
 }

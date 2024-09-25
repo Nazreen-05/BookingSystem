@@ -9,16 +9,16 @@ namespace BookingSystem.Business
     public class Room
     {
         #region Data Members
-        private string roomId; //room Number should be removed, either make room id or room number . both is unique
+        private string roomNumber;
         private string is_available;
         private decimal price_per_night;
         #endregion
 
         #region Property Methods
-        public string RoomID
+        public string RoomNumber
         {
-            get { return roomId; }
-            set {roomId = value; }
+            get { return roomNumber; }
+            set {roomNumber = value; }
         }
 
         public string Avail
@@ -40,9 +40,9 @@ namespace BookingSystem.Business
         {
             //default constructor
         }
-        public Room(string roomId, string is_available, decimal price_per_night)
+        public Room(string roomNumber, string is_available, decimal price_per_night)
         {
-            this.roomId = roomId;
+            this.roomNumber = roomNumber;
             this.is_available = is_available;
             this.price_per_night= price_per_night;
         }

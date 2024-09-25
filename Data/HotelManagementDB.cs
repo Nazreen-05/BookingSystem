@@ -6,10 +6,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BookingSystem.Data
 {
-    internal class HotelManagementDB : DB
+    public class HotelManagementDB : DB
     {
         
         #region Data Members
@@ -154,7 +155,7 @@ namespace BookingSystem.Data
                         if (!(row.RowState == DataRowState.Deleted))
                         {
                             Room room = new Room();
-                            room.RoomID = row["room_number"].ToString().Trim();
+                            room.RoomNumber = row["room_number"].ToString().Trim();
                             room.Avail = row["is_available"].ToString().Trim();
                             room.PricePerNight = Convert.ToDecimal(row["price_per_night"]);
                             rooms.Add(room);
@@ -217,7 +218,6 @@ namespace BookingSystem.Data
                 aRow["guest_id"] = booking.GuestID;
                 aRow["check_in_date"] = booking.CheckInDate;
                 aRow["check_out_date"] = booking.CheckOutDate;
-                aRow["room_type"] = booking.RoomType;
                 aRow["total_cost"] = booking.TotalCost;
                 aRow["deposit_paid"] = booking.DepositPaid;
                 aRow["booking_status"] = booking.BookingStatus;
@@ -234,7 +234,7 @@ namespace BookingSystem.Data
             }
             else if (obj is Room room)
             {
-                aRow["roomId"] = room.RoomID;
+                aRow["room_number"] = room.RoomNumber;
                 aRow["is_available"] = room.Avail;
                 aRow["price_per_night"] = room.PricePerNight;
             }
@@ -289,20 +289,35 @@ namespace BookingSystem.Data
             }
         }
 
-        public bool UpdateDataSource()
+        public bool UpdateDataSource(Booking aBooking)
         {
-            bool success = true;
-
-            // Update each table
-            success &= UpdateDataSource(sqlLocal1, table1);
-            success &= UpdateDataSource(sqlLocal2, table2);
-            success &= UpdateDataSource(sqlLocal3, table3);
-            success &= UpdateDataSource(sqlLocal4, table4); 
-            //  success &= UpdateDataSource(sqlLocal5, table5);
-            // success &= UpdateDataSource(sqlLocal6, table6);
-
-            return success;
+            return UpdateDataSource(sqlLocal1, table1);
         }
+
+        public bool UpdateDataSource(Guest aGuest)
+        {
+            return UpdateDataSource(sqlLocal2, table2);
+        }
+        public bool UpdateDataSource(Payment aPayment)
+        {
+            return UpdateDataSource(sqlLocal3, table3);
+        }
+        public bool UpdateDataSource(Room aRoom)
+        {
+            return UpdateDataSource(sqlLocal4, table4);
+        }
+
+        /*
+        public bool UpdateDataSource(Staff aEmployee)
+        {
+            return UpdateDataSource(sqlLocal5, table5);
+        }
+
+        public bool UpdateDataSource(Userlogin aUser )
+        {
+            return UpdateDataSource(sqlLocal6, table6);
+        }
+        */
     }
 
 

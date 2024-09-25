@@ -14,7 +14,6 @@ namespace BookingSystem.Business
         private string guestId;
         private DateTime checkInDate;
         private DateTime checkOutDate;
-        private string roomType;
         private string bookingStatus;
         private string season;
         private DateTime bookingDate;
@@ -47,11 +46,6 @@ namespace BookingSystem.Business
             set { checkOutDate = value; }
         }
 
-        public string RoomType
-        {
-            get { return roomType; }
-            set { roomType = value; }
-        }
 
         public string BookingStatus
         {
@@ -91,14 +85,13 @@ namespace BookingSystem.Business
             //default constructor
         }
         // Constructor including the new fields
-        public Booking(string bookingId, string guestId, DateTime bookingDate, DateTime checkInDate, DateTime checkOutDate, string roomType, decimal totalCost, decimal depositPaid, string bookingStatus, string season)
+        public Booking(string bookingId, string guestId, DateTime bookingDate, DateTime checkInDate, DateTime checkOutDate, decimal totalCost, decimal depositPaid, string bookingStatus, string season)
         {
             this.bookingId = bookingId;
             this.guestId = guestId;
             this.bookingDate = bookingDate;
             this.checkInDate = checkInDate;
             this.checkOutDate = checkOutDate;
-            this.roomType = roomType;
             this.totalCost = totalCost;
             this.depositPaid = depositPaid;
             this.bookingStatus = bookingStatus;

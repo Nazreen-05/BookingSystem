@@ -10,7 +10,7 @@ namespace BookingSystem.Business
 {
     public class PaymentController
     {
-        /*
+        
         #region Data Members
         private HotelManagementDB paymentDB; // Data access object to communicate with HotelManagementDB
         private Collection<Payment> payments; // Collection to hold all payment objects
@@ -29,7 +29,7 @@ namespace BookingSystem.Business
         public PaymentController()
         {
             paymentDB = new HotelManagementDB(); // Instantiate the data access object
-            payments = paymentDB.AllPayment; // Fetch all payments from the database
+            payments = paymentDB.AllPayments; // Fetch all payments from the database
         }
         #endregion
 
@@ -63,9 +63,9 @@ namespace BookingSystem.Business
         }
 
         // Method to commit changes to the database
-        public bool FinalizeChanges()
+        public bool FinalizeChanges(Payment payment)
         {
-            return paymentDB.UpdateDataSource();
+            return paymentDB.UpdateDataSource(payment);
         }
         #endregion
 
@@ -75,29 +75,37 @@ namespace BookingSystem.Business
         {
             int index = 0;
             bool found = (payments.Count > 0 && payments[index].PaymentID == paymentID);
-            while (!found && (index < payments.Count - 1))
+            int count = payments.Count;
+
+            while (!(found) && (index < payments.Count - 1))
             {
                 index++;
                 found = (payments[index].PaymentID == paymentID);
             }
-            return found ? payments[index] : null;
+            return payments[index];
         }
 
         // Find the index of a payment in the collection
         public int FindIndex(Payment aPayment)
         {
             int counter = 0;
-            bool found = (aPayment.PaymentID == payments[counter].PaymentID);
-
-            while (!found && counter < payments.Count - 1)
+            bool found = false;
+            found = (aPayment.PaymentID == payments[counter].PaymentID);
+            while (!found && counter < payments.Count)
             {
                 counter++;
                 found = (aPayment.PaymentID == payments[counter].PaymentID);
             }
-
-            return found ? counter : -1;
+            if (found)
+            {
+                return counter;
+            }
+            else
+            {
+                return -1;
+            }
         }
         #endregion
-        */
+
     }
 }

@@ -68,6 +68,7 @@
     <Compile Include="Business\Payment.cs" />
     <Compile Include="Business\PaymentController.cs" />
     <Compile Include="Business\Room.cs" />
+    <Compile Include="Business\RoomController.cs" />
     <Compile Include="Business\RoomRates.cs" />
     <Compile Include="Data\DB.cs" />
     <Compile Include="Data\HotelManagementDB.cs" />

@@ -8,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace BookingSystem.Business
 {
-    internal class GuestController
+    public class GuestController
     {
-        /*
         #region Data Members
-        private HotelManagementDB guestDB; // Data access object to communicate with the database
-        private Collection<Guest> guests; // Collection to hold all guest objects
+        HotelManagementDB guestDB; // Data access object to communicate with the database
+        Collection<Guest> guests; // Collection to hold all guest objects
         #endregion
 
         #region Properties
@@ -38,7 +37,7 @@ namespace BookingSystem.Business
         public void DataMaintenance(Guest aGuest, DB.DBOperation operation)
         {
             int index = 0;
-            //hotelManagementDB.DataSetChange(aGuest, operation);
+            guestDB.DataSetChange(aGuest, operation);
 
             switch (operation)
             {
@@ -63,10 +62,10 @@ namespace BookingSystem.Business
         }
 
         // Method to commit changes to the database
-         public bool FinalizeChanges()
-        {
-           return hotelManagementD.UpdateDataSource();
-        }
+         public bool FinalizeChanges(Guest guest)
+         {
+           return guestDB.UpdateDataSource(guest);
+         }
         #endregion
 
         #region Search Methods
@@ -75,29 +74,37 @@ namespace BookingSystem.Business
         {
             int index = 0;
             bool found = (guests.Count > 0 && guests[index].GuestID == guestID);
-            while (!found && (index < guests.Count - 1))
+            int count = guests.Count;
+
+            while (!(found) && (index < guests.Count - 1))
             {
                 index++;
                 found = (guests[index].GuestID == guestID);
             }
-            return found ? guests[index] : null;
+            return guests[index];
         }
 
         // Find the index of a guest in the collection
         public int FindIndex(Guest aGuest)
         {
             int counter = 0;
-            bool found = (aGuest.GuestID == guests[counter].GuestID);
-
-            while (!found && counter < guests.Count - 1)
+            bool found = false;
+            found = (aGuest.GuestID == guests[counter].GuestID);
+            while (!found && counter < guests.Count)
             {
                 counter++;
                 found = (aGuest.GuestID == guests[counter].GuestID);
             }
-
-            return found ? counter : -1;
+            if (found)
+            {
+                return counter;
+            }
+            else
+            {
+                return -1;
+            }
         }
         #endregion
-        */
+        
     }
 }
