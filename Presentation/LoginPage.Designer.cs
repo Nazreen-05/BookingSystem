@@ -59,7 +59,7 @@
             this.lblLoginCopyright.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoginCopyright.Location = new System.Drawing.Point(12, 49);
             this.lblLoginCopyright.Name = "lblLoginCopyright";
-            this.lblLoginCopyright.Size = new System.Drawing.Size(285, 16);
+            this.lblLoginCopyright.Size = new System.Drawing.Size(432, 23);
             this.lblLoginCopyright.TabIndex = 0;
             this.lblLoginCopyright.Text = "Copyright © 2024 Hotel Mangement Project";
             this.lblLoginCopyright.Click += new System.EventHandler(this.label1_Click);
@@ -103,7 +103,7 @@
             this.lblForgot.ForeColor = System.Drawing.Color.DodgerBlue;
             this.lblForgot.Location = new System.Drawing.Point(118, 214);
             this.lblForgot.Name = "lblForgot";
-            this.lblForgot.Size = new System.Drawing.Size(141, 19);
+            this.lblForgot.Size = new System.Drawing.Size(214, 28);
             this.lblForgot.TabIndex = 5;
             this.lblForgot.Text = "Forgot Password?";
             this.lblForgot.UseWaitCursor = true;
@@ -114,7 +114,7 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(49, 121);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 19);
+            this.label3.Size = new System.Drawing.Size(128, 28);
             this.label3.TabIndex = 4;
             this.label3.Text = "Password:";
             // 
@@ -123,7 +123,7 @@
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword.Location = new System.Drawing.Point(53, 153);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(289, 27);
+            this.txtPassword.Size = new System.Drawing.Size(289, 37);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
@@ -148,7 +148,7 @@
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsername.Location = new System.Drawing.Point(53, 77);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(328, 27);
+            this.txtUsername.Size = new System.Drawing.Size(328, 37);
             this.txtUsername.TabIndex = 1;
             // 
             // label2
@@ -157,7 +157,7 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(49, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 19);
+            this.label2.Size = new System.Drawing.Size(136, 28);
             this.label2.TabIndex = 0;
             this.label2.Text = "Username:";
             // 
@@ -216,7 +216,7 @@
             // 
             // LoginPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(782, 679);
@@ -225,7 +225,6 @@
             this.Controls.Add(this.LoginPanelCyan);
             this.Controls.Add(this.gBLogin);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

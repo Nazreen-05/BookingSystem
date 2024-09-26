@@ -46,10 +46,18 @@ namespace BookingSystem
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var form = new HotelMangementMDI();
-            form.ShowDialog();
-            this.Show();
+            if (txtUsername.Text.Equals("admin") && txtPassword.Text.Equals("admin"))
+            {
+                this.Hide();
+                var form = new HotelMangementMDI();
+                form.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("*Incorrect username or password. Please try again.*", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
 
 
         }
