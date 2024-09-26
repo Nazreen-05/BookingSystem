@@ -58,20 +58,20 @@ namespace BookingSystem
         {
             pictureBoxShow.Hide();
             txtPassword.UseSystemPasswordChar = true;
-            pictureBoxHide.Show();
+            pbVisible.Show();
 
         }
 
         private void pictureBoxHide_Click(object sender, EventArgs e)
         {
-            pictureBoxHide.Hide();
+            pbVisible.Hide();
             txtPassword.UseSystemPasswordChar = false;
             pictureBoxShow.Show();
         }
 
         private void pictureBox1_MouseHover(object sender, EventArgs e)
         {
-            toolTip1.SetToolTip(pictureBox1, "Minimize");
+            toolTip1.SetToolTip(pbLoginLogo, "Minimize");
         }
 
         private void pBclose_MouseHover(object sender, EventArgs e)
@@ -105,6 +105,11 @@ namespace BookingSystem
         }
 
         private void LoginPage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
