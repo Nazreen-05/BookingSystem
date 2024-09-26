@@ -19,41 +19,6 @@ namespace BookingSystem
             txtPassword.UseSystemPasswordChar = true;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolTip1_Popup(object sender, PopupEventArgs e)
-        {
-
-        }
-
-        private void toolTip2_Popup(object sender, PopupEventArgs e)
-        {
-
-        }
-
-        private void pictureBoxMin_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBoxMin_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pBclose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         private void pictureBoxShow_Click(object sender, EventArgs e)
         {
             pictureBoxShow.Hide();
@@ -62,12 +27,7 @@ namespace BookingSystem
 
         }
 
-        private void pictureBoxHide_Click(object sender, EventArgs e)
-        {
-            pbVisible.Hide();
-            txtPassword.UseSystemPasswordChar = false;
-            pictureBoxShow.Show();
-        }
+       
 
         private void btnLogin_MouseHover(object sender, EventArgs e)
         {
@@ -102,6 +62,13 @@ namespace BookingSystem
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void pbVisible_Click(object sender, EventArgs e)
+        {
+            pbVisible.Hide();
+            txtPassword.UseSystemPasswordChar = false;
+            pictureBoxShow.Show();
         }
     }
 }
