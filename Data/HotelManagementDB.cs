@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace BookingSystem.Data
 {
     public class HotelManagementDB : DB
     {
-        
+
         #region Data Members
         private string table1 = "Booking";
         private string sqlLocal1 = "SELECT * FROM Booking";
@@ -24,7 +25,7 @@ namespace BookingSystem.Data
         private string sqlLocal3 = "SELECT * FROM Payments";
 
         private string table4 = "Rooms";
-        private string sqlLocal4 = "SELECT * FROM Rooms"; 
+        private string sqlLocal4 = "SELECT * FROM Rooms";
 
         private string table5 = "Staff";
         private string sqlLocal5 = "SELECT * FROM Staff";
@@ -87,9 +88,9 @@ namespace BookingSystem.Data
         }
 
         private void Add2Collection(string table)
-            // populates collections with data from your database. Gets data from db, goes through row of each table , creates an objects and adds it to the collection
-            // populates properties in each tabel iterating through rows
-            // so that you are able to display , (operations include: search , edit and display)
+        // populates collections with data from your database. Gets data from db, goes through row of each table , creates an objects and adds it to the collection
+        // populates properties in each tabel iterating through rows
+        // so that you are able to display , (operations include: search , edit and display)
         {
             DataSet ds = GetDataSet();
             switch (table)
@@ -241,7 +242,7 @@ namespace BookingSystem.Data
 
 
         }
-
+        #region Database Operations CRUD
         public void DataSetChange(object obj, DB.DBOperation operation)
         {
             DataRow aRow = null;
@@ -288,20 +289,203 @@ namespace BookingSystem.Data
                     break;
             }
         }
+        #endregion
+
+
+
+
+        #region Build Parameters, Create Commands & Update database //done for all 4 tables 
+        private void Build_INSERT_Parameters(Booking aBooking)
+        {
+            //Create Parameters to communicate with SQL INSERT...add the input parameter and set its properties.
+            SqlParameter param = default(SqlParameter);
+            param = new SqlParameter("@booking_id", SqlDbType.NVarChar, 15, "booking_id");
+            daMain.InsertCommand.Parameters.Add(param);//Add the parameter to the Parameters collection.
+
+            param = new SqlParameter("@guest_id", SqlDbType.NVarChar, 10, "guest_id");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@booking_date", SqlDbType.DateTime, 10, "booking_date");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@check_in_date", SqlDbType.DateTime, 10, "@check_in_date");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@check_out_date", SqlDbType.DateTime, 10, "@check_out_date");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@total_cost", SqlDbType.Money, 8, "total_cost");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@deposit_paid", SqlDbType.Money, 8, "deposit_paid");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@booking_status", SqlDbType.NVarChar, 15, "booking_status");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@season", SqlDbType.NVarChar, 15, "season");
+            daMain.InsertCommand.Parameters.Add(param);
+
+      
+        }
+
+        private void Create_INSERT_Command(Booking aBooking)
+        {
+            //Create the command that must be used to insert values into the Books table..
+
+            //please insert code here , with correct properties
+            Build_INSERT_Parameters(aBooking);
+        }
 
         public bool UpdateDataSource(Booking aBooking)
         {
             return UpdateDataSource(sqlLocal1, table1);
+        }
+        //guest
+
+        private void Build_INSERT_Parameters(Guest aGuest)
+        {
+            //Create Parameters to communicate with SQL INSERT...add the input parameter and set its properties.
+            //please insert code here , with correct properties
+            SqlParameter param = default(SqlParameter);
+            param = new SqlParameter("@booking_id", SqlDbType.NVarChar, 15, "booking_id");
+            daMain.InsertCommand.Parameters.Add(param);//Add the parameter to the Parameters collection.
+
+            param = new SqlParameter("@guest_id", SqlDbType.NVarChar, 10, "guest_id");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@booking_date", SqlDbType.DateTime, 10, "booking_date");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@check_in_date", SqlDbType.DateTime, 10, "@check_in_date");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@check_out_date", SqlDbType.DateTime, 10, "@check_out_date");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@total_cost", SqlDbType.Money, 8, "total_cost");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@deposit_paid", SqlDbType.Money, 8, "deposit_paid");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@booking_status", SqlDbType.NVarChar, 15, "booking_status");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@season", SqlDbType.NVarChar, 15, "season");
+            daMain.InsertCommand.Parameters.Add(param);
+
+       
+        }
+
+        private void Create_INSERT_Command(Guest aGuest)
+        {
+            //Create the command that must be used to insert values into the Books table..
+
+            //please insert code here , with correct properties
+            Build_INSERT_Parameters(aGuest);
         }
 
         public bool UpdateDataSource(Guest aGuest)
         {
             return UpdateDataSource(sqlLocal2, table2);
         }
+
+
+        //payments
+        private void Build_INSERT_Parameters(Payment aPayment)
+        {
+            //Create Parameters to communicate with SQL INSERT...add the input parameter and set its properties.
+            //please insert code here , with correct properties
+            SqlParameter param = default(SqlParameter);
+            param = new SqlParameter("@booking_id", SqlDbType.NVarChar, 15, "booking_id");
+            daMain.InsertCommand.Parameters.Add(param);//Add the parameter to the Parameters collection.
+
+            param = new SqlParameter("@guest_id", SqlDbType.NVarChar, 10, "guest_id");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@booking_date", SqlDbType.DateTime, 10, "booking_date");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@check_in_date", SqlDbType.DateTime, 10, "@check_in_date");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@check_out_date", SqlDbType.DateTime, 10, "@check_out_date");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@total_cost", SqlDbType.Money, 8, "total_cost");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@deposit_paid", SqlDbType.Money, 8, "deposit_paid");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@booking_status", SqlDbType.NVarChar, 15, "booking_status");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@season", SqlDbType.NVarChar, 15, "season");
+            daMain.InsertCommand.Parameters.Add(param);
+
+           
+        }
+
+        private void Create_INSERT_Command(Payment aPayment)
+        {
+            //Create the command that must be used to insert values into the Books table..
+
+            //please insert code here , with correct properties
+            Build_INSERT_Parameters(aPayment);
+        }
+
         public bool UpdateDataSource(Payment aPayment)
         {
             return UpdateDataSource(sqlLocal3, table3);
         }
+
+
+        //rooms
+        private void Build_INSERT_Parameters(Room aRoom)
+        {
+            //Create Parameters to communicate with SQL INSERT...add the input parameter and set its properties.
+            //please insert code here , with correct properties
+            SqlParameter param = default(SqlParameter);
+            param = new SqlParameter("@booking_id", SqlDbType.NVarChar, 15, "booking_id");
+            daMain.InsertCommand.Parameters.Add(param);//Add the parameter to the Parameters collection.
+
+            param = new SqlParameter("@guest_id", SqlDbType.NVarChar, 10, "guest_id");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@booking_date", SqlDbType.DateTime, 10, "booking_date");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@check_in_date", SqlDbType.DateTime, 10, "@check_in_date");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@check_out_date", SqlDbType.DateTime, 10, "@check_out_date");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@total_cost", SqlDbType.Money, 8, "total_cost");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@deposit_paid", SqlDbType.Money, 8, "deposit_paid");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@booking_status", SqlDbType.NVarChar, 15, "booking_status");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@season", SqlDbType.NVarChar, 15, "season");
+            daMain.InsertCommand.Parameters.Add(param);
+
+       
+        }
+
+        private void Create_INSERT_Command(Room aRoom)
+        {
+            //Create the command that must be used to insert values into the Books table..
+
+            //please insert code here , with correct properties
+            Build_INSERT_Parameters(aRoom);
+        }
+
         public bool UpdateDataSource(Room aRoom)
         {
             return UpdateDataSource(sqlLocal4, table4);
@@ -320,8 +504,8 @@ namespace BookingSystem.Data
         */
 
 
+
+        #endregion
+
     }
-
-
-
 }
