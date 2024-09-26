@@ -70,5 +70,10 @@ namespace BookingSystem
             txtPassword.UseSystemPasswordChar = false;
             pictureBoxShow.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

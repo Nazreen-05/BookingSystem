@@ -131,14 +131,14 @@ namespace BookingSystem.Presentation
 
         private void addGuestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GuestForm guestForm = new GuestForm();
+            CreateAccount guestForm = new CreateAccount();
             guestForm.MdiParent = this;
             guestForm.Show();
         }
 
         private void listAllGuestsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GuestListing guestListingForm = new GuestListing();
+            Accounts guestListingForm = new Accounts();
             guestListingForm.MdiParent = this;
             guestListingForm.Show();
 
