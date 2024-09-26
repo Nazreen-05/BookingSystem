@@ -53,7 +53,7 @@
             this.txtCreateAccCity = new System.Windows.Forms.TextBox();
             this.txtCreateAccPostal = new System.Windows.Forms.TextBox();
             this.btnCreate = new System.Windows.Forms.Button();
-            this.btnCreateAccBack = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.CreateAccPanelWood.SuspendLayout();
             this.CreateAccPanelCyan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCreateAccLogo)).BeginInit();
@@ -114,7 +114,7 @@
             // 
             // gbNewAccount
             // 
-            this.gbNewAccount.Controls.Add(this.btnCreateAccBack);
+            this.gbNewAccount.Controls.Add(this.button1);
             this.gbNewAccount.Controls.Add(this.btnCreate);
             this.gbNewAccount.Controls.Add(this.txtCreateAccPhone);
             this.gbNewAccount.Controls.Add(this.txtCreateAccEmail);
@@ -296,14 +296,14 @@
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
             // 
-            // btnCreateAccBack
+            // button1
             // 
-            this.btnCreateAccBack.Location = new System.Drawing.Point(645, 264);
-            this.btnCreateAccBack.Name = "btnCreateAccBack";
-            this.btnCreateAccBack.Size = new System.Drawing.Size(109, 43);
-            this.btnCreateAccBack.TabIndex = 13;
-            this.btnCreateAccBack.Text = "Back";
-            this.btnCreateAccBack.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(645, 264);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 43);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // CreateAccount
             // 
@@ -353,7 +353,7 @@
         private System.Windows.Forms.TextBox txtCreateAccCity;
         private System.Windows.Forms.TextBox txtCreateAccSuburb;
         private System.Windows.Forms.TextBox txtCreateAccStreet;
-        private System.Windows.Forms.Button btnCreateAccBack;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnCreate;
     }
 }

@@ -50,6 +50,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -77,6 +78,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HotelManagementDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Accounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Accounts.Designer.cs">
+      <DependentUpon>Accounts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\BookingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,18 +102,6 @@
     <Compile Include="Presentation\CreateAccount.Designer.cs">
       <DependentUpon>CreateAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\GuestForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation\GuestForm.Designer.cs">
-      <DependentUpon>GuestForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\GuestListing.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation\GuestListing.Designer.cs">
-      <DependentUpon>GuestListing.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +116,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentation\Accounts.resx">
+      <DependentUpon>Accounts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\BookingForm.resx">
       <DependentUpon>BookingForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,9 +127,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\CreateAccount.resx">
       <DependentUpon>CreateAccount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\GuestListing.resx">
-      <DependentUpon>GuestListing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>

@@ -181,7 +181,7 @@
             this.LoginPanelCyan.ForeColor = System.Drawing.Color.Black;
             this.LoginPanelCyan.Location = new System.Drawing.Point(0, 604);
             this.LoginPanelCyan.Name = "LoginPanelCyan";
-            this.LoginPanelCyan.Size = new System.Drawing.Size(762, 75);
+            this.LoginPanelCyan.Size = new System.Drawing.Size(782, 75);
             this.LoginPanelCyan.TabIndex = 3;
             this.LoginPanelCyan.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -192,7 +192,7 @@
             this.LoginPanelWood.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.LoginPanelWood.Location = new System.Drawing.Point(0, 594);
             this.LoginPanelWood.Name = "LoginPanelWood";
-            this.LoginPanelWood.Size = new System.Drawing.Size(762, 10);
+            this.LoginPanelWood.Size = new System.Drawing.Size(782, 10);
             this.LoginPanelWood.TabIndex = 4;
             // 
             // panel3
@@ -219,7 +219,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(762, 679);
+            this.ClientSize = new System.Drawing.Size(782, 679);
             this.Controls.Add(this.pbLoginLogo);
             this.Controls.Add(this.LoginPanelWood);
             this.Controls.Add(this.LoginPanelCyan);
