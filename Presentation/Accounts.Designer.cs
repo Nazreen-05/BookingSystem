@@ -223,7 +223,7 @@
             // 
             // btnCreateAcc
             // 
-            this.btnCreateAcc.Location = new System.Drawing.Point(736, 207);
+            this.btnCreateAcc.Location = new System.Drawing.Point(742, 210);
             this.btnCreateAcc.Name = "btnCreateAcc";
             this.btnCreateAcc.Size = new System.Drawing.Size(180, 43);
             this.btnCreateAcc.TabIndex = 13;

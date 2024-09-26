@@ -28,23 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookingForm));
+            this.BookingPanelWood = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.BookingPanelCyan = new System.Windows.Forms.Panel();
+            this.lblBookingCopyright = new System.Windows.Forms.Label();
+            this.pbBookingLogo = new System.Windows.Forms.PictureBox();
+            this.BookingPanelWood.SuspendLayout();
+            this.BookingPanelCyan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBookingLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel2
+            // BookingPanelWood
             // 
-            this.panel2.BackColor = System.Drawing.Color.BurlyWood;
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 489);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1094, 10);
-            this.panel2.TabIndex = 6;
+            this.BookingPanelWood.BackColor = System.Drawing.Color.BurlyWood;
+            this.BookingPanelWood.Controls.Add(this.panel3);
+            this.BookingPanelWood.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BookingPanelWood.Location = new System.Drawing.Point(0, 489);
+            this.BookingPanelWood.Name = "BookingPanelWood";
+            this.BookingPanelWood.Size = new System.Drawing.Size(1094, 10);
+            this.BookingPanelWood.TabIndex = 6;
             // 
             // panel3
             // 
@@ -54,48 +57,62 @@
             this.panel3.Size = new System.Drawing.Size(1366, 10);
             this.panel3.TabIndex = 5;
             // 
-            // panel1
+            // BookingPanelCyan
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(0, 499);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1094, 75);
-            this.panel1.TabIndex = 5;
+            this.BookingPanelCyan.BackColor = System.Drawing.Color.DarkCyan;
+            this.BookingPanelCyan.Controls.Add(this.pbBookingLogo);
+            this.BookingPanelCyan.Controls.Add(this.lblBookingCopyright);
+            this.BookingPanelCyan.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BookingPanelCyan.ForeColor = System.Drawing.Color.Black;
+            this.BookingPanelCyan.Location = new System.Drawing.Point(0, 499);
+            this.BookingPanelCyan.Name = "BookingPanelCyan";
+            this.BookingPanelCyan.Size = new System.Drawing.Size(1094, 75);
+            this.BookingPanelCyan.TabIndex = 5;
             // 
-            // label1
+            // lblBookingCopyright
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(432, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Copyright © 2024 Hotel Mangement Project";
+            this.lblBookingCopyright.AutoSize = true;
+            this.lblBookingCopyright.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookingCopyright.Location = new System.Drawing.Point(12, 49);
+            this.lblBookingCopyright.Name = "lblBookingCopyright";
+            this.lblBookingCopyright.Size = new System.Drawing.Size(432, 23);
+            this.lblBookingCopyright.TabIndex = 0;
+            this.lblBookingCopyright.Text = "Copyright © 2024 Hotel Mangement Project";
+            // 
+            // pbBookingLogo
+            // 
+            this.pbBookingLogo.BackColor = System.Drawing.Color.Transparent;
+            this.pbBookingLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbBookingLogo.Image")));
+            this.pbBookingLogo.Location = new System.Drawing.Point(943, -4);
+            this.pbBookingLogo.Name = "pbBookingLogo";
+            this.pbBookingLogo.Size = new System.Drawing.Size(148, 79);
+            this.pbBookingLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBookingLogo.TabIndex = 8;
+            this.pbBookingLogo.TabStop = false;
             // 
             // BookingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1094, 574);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.BookingPanelWood);
+            this.Controls.Add(this.BookingPanelCyan);
             this.Name = "BookingForm";
             this.Text = "BookingForm";
-            this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.BookingPanelWood.ResumeLayout(false);
+            this.BookingPanelCyan.ResumeLayout(false);
+            this.BookingPanelCyan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBookingLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel BookingPanelWood;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel BookingPanelCyan;
+        private System.Windows.Forms.Label lblBookingCopyright;
+        private System.Windows.Forms.PictureBox pbBookingLogo;
     }
 }

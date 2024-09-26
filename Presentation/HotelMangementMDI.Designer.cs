@@ -88,9 +88,17 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.MDIPanelWood = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.MDIPanelCyan = new System.Windows.Forms.Panel();
+            this.pbMDILogo = new System.Windows.Forms.PictureBox();
+            this.lblMDICopyright = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
+            this.MDIPanelWood.SuspendLayout();
+            this.MDIPanelCyan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMDILogo)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -109,7 +117,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(948, 35);
+            this.menuStrip.Size = new System.Drawing.Size(1093, 33);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -352,42 +360,42 @@
             // newWindowToolStripMenuItem
             // 
             this.newWindowToolStripMenuItem.Name = "newWindowToolStripMenuItem";
-            this.newWindowToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.newWindowToolStripMenuItem.Size = new System.Drawing.Size(227, 34);
             this.newWindowToolStripMenuItem.Text = "&New Window";
             this.newWindowToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // cascadeToolStripMenuItem
             // 
             this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(227, 34);
             this.cascadeToolStripMenuItem.Text = "&Cascade";
             this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.CascadeToolStripMenuItem_Click);
             // 
             // tileVerticalToolStripMenuItem
             // 
             this.tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
-            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(227, 34);
             this.tileVerticalToolStripMenuItem.Text = "Tile &Vertical";
             this.tileVerticalToolStripMenuItem.Click += new System.EventHandler(this.TileVerticalToolStripMenuItem_Click);
             // 
             // tileHorizontalToolStripMenuItem
             // 
             this.tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
-            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(227, 34);
             this.tileHorizontalToolStripMenuItem.Text = "Tile &Horizontal";
             this.tileHorizontalToolStripMenuItem.Click += new System.EventHandler(this.TileHorizontalToolStripMenuItem_Click);
             // 
             // closeAllToolStripMenuItem
             // 
             this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(227, 34);
             this.closeAllToolStripMenuItem.Text = "C&lose All";
             this.closeAllToolStripMenuItem.Click += new System.EventHandler(this.CloseAllToolStripMenuItem_Click);
             // 
             // arrangeIconsToolStripMenuItem
             // 
             this.arrangeIconsToolStripMenuItem.Name = "arrangeIconsToolStripMenuItem";
-            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(227, 34);
             this.arrangeIconsToolStripMenuItem.Text = "&Arrange Icons";
             this.arrangeIconsToolStripMenuItem.Click += new System.EventHandler(this.ArrangeIconsToolStripMenuItem_Click);
             // 
@@ -449,14 +457,14 @@
             // addBookingToolStripMenuItem
             // 
             this.addBookingToolStripMenuItem.Name = "addBookingToolStripMenuItem";
-            this.addBookingToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.addBookingToolStripMenuItem.Size = new System.Drawing.Size(242, 34);
             this.addBookingToolStripMenuItem.Text = "Add Booking";
             this.addBookingToolStripMenuItem.Click += new System.EventHandler(this.addBookingToolStripMenuItem_Click);
             // 
             // listAllBookingsToolStripMenuItem
             // 
             this.listAllBookingsToolStripMenuItem.Name = "listAllBookingsToolStripMenuItem";
-            this.listAllBookingsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.listAllBookingsToolStripMenuItem.Size = new System.Drawing.Size(242, 34);
             this.listAllBookingsToolStripMenuItem.Text = "List all bookings";
             this.listAllBookingsToolStripMenuItem.Click += new System.EventHandler(this.listAllBookingsToolStripMenuItem_Click);
             // 
@@ -472,14 +480,14 @@
             // addGuestToolStripMenuItem
             // 
             this.addGuestToolStripMenuItem.Name = "addGuestToolStripMenuItem";
-            this.addGuestToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.addGuestToolStripMenuItem.Size = new System.Drawing.Size(219, 34);
             this.addGuestToolStripMenuItem.Text = "Add guest";
             this.addGuestToolStripMenuItem.Click += new System.EventHandler(this.addGuestToolStripMenuItem_Click);
             // 
             // listAllGuestsToolStripMenuItem
             // 
             this.listAllGuestsToolStripMenuItem.Name = "listAllGuestsToolStripMenuItem";
-            this.listAllGuestsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.listAllGuestsToolStripMenuItem.Size = new System.Drawing.Size(219, 34);
             this.listAllGuestsToolStripMenuItem.Text = "List all guests";
             this.listAllGuestsToolStripMenuItem.Click += new System.EventHandler(this.listAllGuestsToolStripMenuItem_Click);
             // 
@@ -495,10 +503,10 @@
             this.printPreviewToolStripButton,
             this.toolStripSeparator2,
             this.helpToolStripButton});
-            this.toolStrip.Location = new System.Drawing.Point(0, 35);
+            this.toolStrip.Location = new System.Drawing.Point(0, 33);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.toolStrip.Size = new System.Drawing.Size(948, 33);
+            this.toolStrip.Size = new System.Drawing.Size(1093, 33);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "ToolStrip";
             this.toolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip_ItemClicked);
@@ -574,10 +582,10 @@
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 665);
+            this.statusStrip.Location = new System.Drawing.Point(0, 569);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusStrip.Size = new System.Drawing.Size(948, 32);
+            this.statusStrip.Size = new System.Drawing.Size(1093, 32);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -587,11 +595,64 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(60, 25);
             this.toolStripStatusLabel.Text = "Status";
             // 
+            // MDIPanelWood
+            // 
+            this.MDIPanelWood.BackColor = System.Drawing.Color.BurlyWood;
+            this.MDIPanelWood.Controls.Add(this.panel3);
+            this.MDIPanelWood.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.MDIPanelWood.Location = new System.Drawing.Point(0, 484);
+            this.MDIPanelWood.Name = "MDIPanelWood";
+            this.MDIPanelWood.Size = new System.Drawing.Size(1093, 10);
+            this.MDIPanelWood.TabIndex = 8;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Gold;
+            this.panel3.Location = new System.Drawing.Point(0, 427);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1366, 10);
+            this.panel3.TabIndex = 5;
+            // 
+            // MDIPanelCyan
+            // 
+            this.MDIPanelCyan.BackColor = System.Drawing.Color.DarkCyan;
+            this.MDIPanelCyan.Controls.Add(this.pbMDILogo);
+            this.MDIPanelCyan.Controls.Add(this.lblMDICopyright);
+            this.MDIPanelCyan.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.MDIPanelCyan.ForeColor = System.Drawing.Color.Black;
+            this.MDIPanelCyan.Location = new System.Drawing.Point(0, 494);
+            this.MDIPanelCyan.Name = "MDIPanelCyan";
+            this.MDIPanelCyan.Size = new System.Drawing.Size(1093, 75);
+            this.MDIPanelCyan.TabIndex = 7;
+            // 
+            // pbMDILogo
+            // 
+            this.pbMDILogo.BackColor = System.Drawing.Color.Transparent;
+            this.pbMDILogo.Image = ((System.Drawing.Image)(resources.GetObject("pbMDILogo.Image")));
+            this.pbMDILogo.Location = new System.Drawing.Point(943, -4);
+            this.pbMDILogo.Name = "pbMDILogo";
+            this.pbMDILogo.Size = new System.Drawing.Size(148, 79);
+            this.pbMDILogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMDILogo.TabIndex = 8;
+            this.pbMDILogo.TabStop = false;
+            // 
+            // lblMDICopyright
+            // 
+            this.lblMDICopyright.AutoSize = true;
+            this.lblMDICopyright.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMDICopyright.Location = new System.Drawing.Point(12, 49);
+            this.lblMDICopyright.Name = "lblMDICopyright";
+            this.lblMDICopyright.Size = new System.Drawing.Size(432, 23);
+            this.lblMDICopyright.TabIndex = 0;
+            this.lblMDICopyright.Text = "Copyright © 2024 Hotel Mangement Project";
+            // 
             // HotelMangementMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(948, 697);
+            this.ClientSize = new System.Drawing.Size(1093, 601);
+            this.Controls.Add(this.MDIPanelWood);
+            this.Controls.Add(this.MDIPanelCyan);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);
@@ -609,6 +670,10 @@
             this.toolStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
+            this.MDIPanelWood.ResumeLayout(false);
+            this.MDIPanelCyan.ResumeLayout(false);
+            this.MDIPanelCyan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMDILogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -674,6 +739,11 @@
         private System.Windows.Forms.ToolStripMenuItem guestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addGuestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listAllGuestsToolStripMenuItem;
+        private System.Windows.Forms.Panel MDIPanelWood;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel MDIPanelCyan;
+        private System.Windows.Forms.PictureBox pbMDILogo;
+        private System.Windows.Forms.Label lblMDICopyright;
     }
 }
 

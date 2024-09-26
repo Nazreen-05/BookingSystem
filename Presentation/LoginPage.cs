@@ -69,16 +69,6 @@ namespace BookingSystem
             pictureBoxShow.Show();
         }
 
-        private void pictureBox1_MouseHover(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(pbLoginLogo, "Minimize");
-        }
-
-        private void pBclose_MouseHover(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(pBclose, "Close");
-        }
-
         private void btnLogin_MouseHover(object sender, EventArgs e)
         {
             toolTip1.SetToolTip(btnLogin, "Log in");
