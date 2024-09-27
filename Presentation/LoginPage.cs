@@ -46,6 +46,7 @@ namespace BookingSystem
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+           
             if(txtUsername.Text == "" ||  txtPassword.Text == "")
             {
                 MessageBox.Show("Please enter in all required fields", "Missing Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -58,12 +59,15 @@ namespace BookingSystem
                     var form = new HomePage();
                     form.ShowDialog();
                     this.Show();
+                    
                 }
                 else
                 {
                     MessageBox.Show("Incorrect Username or Password. Please try again.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
+
         }
 
         private void LoginPage_Load(object sender, EventArgs e)

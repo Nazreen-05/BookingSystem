@@ -76,7 +76,8 @@ namespace BookingSystem.Presentation
 
         private void label1_Click(object sender, EventArgs e)
         {
-            this.Close();   
+            this.Close();
+            
         }
     }
 }
