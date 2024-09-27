@@ -34,6 +34,7 @@
             this.lblLoginCopyright = new System.Windows.Forms.Label();
             this.gBLogin = new System.Windows.Forms.GroupBox();
             this.pbVisible = new System.Windows.Forms.PictureBox();
+            this.lblForgot = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.LoginPanelWood = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pbLoginLogo = new System.Windows.Forms.PictureBox();
-            this.lblForgot = new System.Windows.Forms.Label();
             this.gBLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbVisible)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShow)).BeginInit();
@@ -59,14 +59,14 @@
             this.lblLoginCopyright.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoginCopyright.Location = new System.Drawing.Point(12, 49);
             this.lblLoginCopyright.Name = "lblLoginCopyright";
-            this.lblLoginCopyright.Size = new System.Drawing.Size(432, 23);
+            this.lblLoginCopyright.Size = new System.Drawing.Size(285, 16);
             this.lblLoginCopyright.TabIndex = 0;
             this.lblLoginCopyright.Text = "Copyright © 2024 Hotel Mangement Project";
             this.lblLoginCopyright.Click += new System.EventHandler(this.label1_Click);
             // 
             // gBLogin
             // 
-            this.gBLogin.BackColor = System.Drawing.SystemColors.Control;
+            this.gBLogin.BackColor = System.Drawing.Color.White;
             this.gBLogin.Controls.Add(this.pbVisible);
             this.gBLogin.Controls.Add(this.lblForgot);
             this.gBLogin.Controls.Add(this.label3);
@@ -88,13 +88,25 @@
             // 
             this.pbVisible.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbVisible.Image = ((System.Drawing.Image)(resources.GetObject("pbVisible.Image")));
-            this.pbVisible.Location = new System.Drawing.Point(348, 153);
+            this.pbVisible.Location = new System.Drawing.Point(341, 153);
             this.pbVisible.Name = "pbVisible";
-            this.pbVisible.Size = new System.Drawing.Size(33, 37);
+            this.pbVisible.Size = new System.Drawing.Size(33, 27);
             this.pbVisible.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbVisible.TabIndex = 7;
             this.pbVisible.TabStop = false;
             this.pbVisible.Click += new System.EventHandler(this.pbVisible_Click);
+            // 
+            // lblForgot
+            // 
+            this.lblForgot.AutoSize = true;
+            this.lblForgot.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblForgot.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblForgot.Location = new System.Drawing.Point(118, 214);
+            this.lblForgot.Name = "lblForgot";
+            this.lblForgot.Size = new System.Drawing.Size(141, 19);
+            this.lblForgot.TabIndex = 5;
+            this.lblForgot.Text = "Forgot Password?";
+            this.lblForgot.UseWaitCursor = true;
             // 
             // label3
             // 
@@ -102,7 +114,7 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(49, 121);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 28);
+            this.label3.Size = new System.Drawing.Size(84, 19);
             this.label3.TabIndex = 4;
             this.label3.Text = "Password:";
             // 
@@ -111,7 +123,7 @@
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword.Location = new System.Drawing.Point(53, 153);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(289, 37);
+            this.txtPassword.Size = new System.Drawing.Size(289, 27);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
@@ -136,7 +148,7 @@
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsername.Location = new System.Drawing.Point(53, 77);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(328, 37);
+            this.txtUsername.Size = new System.Drawing.Size(328, 27);
             this.txtUsername.TabIndex = 1;
             // 
             // label2
@@ -145,7 +157,7 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(49, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 28);
+            this.label2.Size = new System.Drawing.Size(91, 19);
             this.label2.TabIndex = 0;
             this.label2.Text = "Username:";
             // 
@@ -153,9 +165,9 @@
             // 
             this.pictureBoxShow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxShow.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxShow.Image")));
-            this.pictureBoxShow.Location = new System.Drawing.Point(348, 153);
+            this.pictureBoxShow.Location = new System.Drawing.Point(341, 153);
             this.pictureBoxShow.Name = "pictureBoxShow";
-            this.pictureBoxShow.Size = new System.Drawing.Size(33, 37);
+            this.pictureBoxShow.Size = new System.Drawing.Size(33, 27);
             this.pictureBoxShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxShow.TabIndex = 4;
             this.pictureBoxShow.TabStop = false;
@@ -202,21 +214,9 @@
             this.pbLoginLogo.TabIndex = 5;
             this.pbLoginLogo.TabStop = false;
             // 
-            // lblForgot
-            // 
-            this.lblForgot.AutoSize = true;
-            this.lblForgot.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblForgot.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblForgot.Location = new System.Drawing.Point(118, 214);
-            this.lblForgot.Name = "lblForgot";
-            this.lblForgot.Size = new System.Drawing.Size(214, 28);
-            this.lblForgot.TabIndex = 5;
-            this.lblForgot.Text = "Forgot Password?";
-            this.lblForgot.UseWaitCursor = true;
-            // 
             // LoginPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1294, 679);
