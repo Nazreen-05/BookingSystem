@@ -49,7 +49,7 @@ namespace BookingSystem
             if (txtUsername.Text.Equals("admin") && txtPassword.Text.Equals("admin"))
             {
                 this.Hide();
-                var form = new HotelMangementMDI();
+                var form = new HomePage();
                 form.ShowDialog();
                 this.Show();
             }

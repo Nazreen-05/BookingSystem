@@ -102,17 +102,17 @@
     <Compile Include="Presentation\CreateAccount.Designer.cs">
       <DependentUpon>CreateAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\HomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\HomePage.Designer.cs">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation\LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\HotelMangementMDI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation\HotelMangementMDI.Designer.cs">
-      <DependentUpon>HotelMangementMDI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,11 +128,11 @@
     <EmbeddedResource Include="Presentation\CreateAccount.resx">
       <DependentUpon>CreateAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\HotelMangementMDI.resx">
-      <DependentUpon>HotelMangementMDI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

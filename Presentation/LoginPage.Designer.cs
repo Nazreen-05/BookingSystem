@@ -77,7 +77,7 @@
             this.gBLogin.Controls.Add(this.pictureBoxShow);
             this.gBLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gBLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gBLogin.Location = new System.Drawing.Point(471, 217);
+            this.gBLogin.Location = new System.Drawing.Point(152, 204);
             this.gBLogin.Name = "gBLogin";
             this.gBLogin.Size = new System.Drawing.Size(457, 371);
             this.gBLogin.TabIndex = 0;
@@ -207,7 +207,7 @@
             // 
             this.pbLoginLogo.BackColor = System.Drawing.Color.Transparent;
             this.pbLoginLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLoginLogo.Image")));
-            this.pbLoginLogo.Location = new System.Drawing.Point(449, 12);
+            this.pbLoginLogo.Location = new System.Drawing.Point(130, -1);
             this.pbLoginLogo.Name = "pbLoginLogo";
             this.pbLoginLogo.Size = new System.Drawing.Size(479, 186);
             this.pbLoginLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -227,8 +227,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginPage";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.LoginPage_Load);
             this.gBLogin.ResumeLayout(false);
             this.gBLogin.PerformLayout();
