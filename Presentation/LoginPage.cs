@@ -46,20 +46,24 @@ namespace BookingSystem
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text.Equals("admin") && txtPassword.Text.Equals("admin"))
+            if(txtUsername.Text == "" ||  txtPassword.Text == "")
             {
-                this.Hide();
-                var form = new HomePage();
-                form.ShowDialog();
-                this.Show();
+                MessageBox.Show("Please enter in all required fields", "Missing Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("*Incorrect username or password. Please try again.*", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (txtUsername.Text.Equals("admin") && txtPassword.Text.Equals("admin"))
+                {
+                    this.Hide();
+                    var form = new HomePage();
+                    form.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect Username or Password. Please try again.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            
-
-
         }
 
         private void LoginPage_Load(object sender, EventArgs e)
