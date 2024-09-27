@@ -35,8 +35,8 @@ namespace BookingSystem.Presentation
 
         private void MovePanel(Control btn)
         {
-            panelControl.Top = btn.Top;
-            panelControl.Height = btn.Height;
+            panelControl.Left = btn.Left;
+            panelControl.Width = btn.Width;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -67,6 +67,16 @@ namespace BookingSystem.Presentation
         private void btnAnalytics_Click(object sender, EventArgs e)
         {
             MovePanel(btnAnalytics);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Close();   
         }
     }
 }

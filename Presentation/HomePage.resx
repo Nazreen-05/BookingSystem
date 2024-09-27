@@ -4661,7 +4661,7 @@
   <data name="btnGuest.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        rwAAAK8BK7AVuQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHRSURBVEhLrZXb
+        rgAAAK4B+ff3XQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHRSURBVEhLrZXb
         KwVRFMYPodyeSN68EnJ7citK8uiSklxChEclKV7k9qBcklvub4qi5FH5z3y/2Wtq5pgm58x89Wu+s/Za
         65zZs2afTA4qE71GKYE0NSauxLSBHxWpqEusOxvShuh0NpnuRKGzIRFjLbEu7BqluLV/K+5X3to1kRbE
         gLMhDYp5Z5OpQByIZVFrrIh9wVpq6hY7BpOVisrFjDgTPQRMeGKskZOXeJGuBbNeJHig1QaeGHdyI0ZE
@@ -4689,7 +4689,7 @@
   <data name="btnBookingList.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAF
-        hwAABYcByeHRBAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAG7SURBVEhLzdU9
+        hgAABYYBG6Yz4AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAG7SURBVEhLzdU9
         SJZRGIfxR0VCkqBCQYLSIEKnyEACIYTCrRBxqJCWchB0q1x0alAMXHSwUSgo2hSsXBRBaA36ILUPoowK
         i3DQzes6h1cURHg8Iv7hB+d1OPf7nvuc22w/chs/sZzoD75gFGewkd+oisvkHMUdWKjFP5g5DKEjkRs3
         wpzCJ9T54Ti6cD9RL6bxBMW4iccIOYRHcZmUIrzCFZThO0KOYTEukzOAW3EZ+hvSjPG4TEoNFlCNk3iL
@@ -4716,7 +4716,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAD+nSURBVHhe7d0H
+        wQAADsEBuJFr7QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAD+nSURBVHhe7d0H
         mBzVme5xk4xxxGGd1l57197r9Xod1pt37d21MRmRo20QYINZbDCYjG0ymJyVUA4gJFBAAWWNMgiEQKCE
         RmKQZrp7NN09EsEYEOi956gPBmo+Ic1Mh+qq//s8v4uv11RXV536vp7uqnPeRwghhBBCCCGEEEIIIYQQ
         QgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEII2fms36yPZwv6u2yb/tv988hMUadmi/pNNq+rcgXd6f67
