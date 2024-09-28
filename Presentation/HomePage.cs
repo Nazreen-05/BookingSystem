@@ -46,27 +46,47 @@ namespace BookingSystem.Presentation
 
         private void btnBooking_Click(object sender, EventArgs e)
         {
-            MovePanel(btnBooking);
+            MovePanel(btnAddBooking);
+            this.Hide();
+            var form = new BookingForm();
+            form.ShowDialog();
+            this.Show();
         }
 
         private void btnBookingList_Click(object sender, EventArgs e)
         {
             MovePanel(btnBookingList);
+            this.Hide();
+            var form = new BookingListingForm();
+            form.ShowDialog();
+            this.Show();
         }
 
         private void btnGuest_Click(object sender, EventArgs e)
         {
-            MovePanel (btnGuest);
+            MovePanel (btnAddGuest);
+            this.Hide();
+            var form = new CreateAccount();
+            form.ShowDialog();
+            this.Show();
         }
 
         private void btnGuestList_Click(object sender, EventArgs e)
         {
             MovePanel(btnGuestList);
+            this.Hide();
+            var form = new Accounts();
+            form.ShowDialog();
+            this.Show();
         }
 
         private void btnAnalytics_Click(object sender, EventArgs e)
         {
             MovePanel(btnAnalytics);
+            this.Hide();
+            var form = new Analytics();
+            form.ShowDialog();
+            this.Show();
         }
 
         private void label3_Click(object sender, EventArgs e)

@@ -32,28 +32,28 @@
             this.CreateAccPanelWood = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.CreateAccPanelCyan = new System.Windows.Forms.Panel();
-            this.lblCreateAccCopyright = new System.Windows.Forms.Label();
             this.pbCreateAccLogo = new System.Windows.Forms.PictureBox();
+            this.lblCreateAccCopyright = new System.Windows.Forms.Label();
             this.gbNewAccount = new System.Windows.Forms.GroupBox();
-            this.lblCreateAccName = new System.Windows.Forms.Label();
-            this.lblCreateAccSName = new System.Windows.Forms.Label();
-            this.lblCreateAccEmail = new System.Windows.Forms.Label();
-            this.lblCreateAccPhone = new System.Windows.Forms.Label();
+            this.btnCreateAccBack = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.txtCreateAccPhone = new System.Windows.Forms.TextBox();
+            this.txtCreateAccEmail = new System.Windows.Forms.TextBox();
+            this.txtCreateAccSName = new System.Windows.Forms.TextBox();
+            this.txtCreateAccName = new System.Windows.Forms.TextBox();
             this.gbAddress = new System.Windows.Forms.GroupBox();
+            this.txtCreateAccPostal = new System.Windows.Forms.TextBox();
+            this.txtCreateAccCity = new System.Windows.Forms.TextBox();
+            this.txtCreateAccSuburb = new System.Windows.Forms.TextBox();
+            this.txtCreateAccStreet = new System.Windows.Forms.TextBox();
+            this.lblCreateAccPostal = new System.Windows.Forms.Label();
             this.lblCreateAccCity = new System.Windows.Forms.Label();
             this.lblCreateAccSuburb = new System.Windows.Forms.Label();
             this.lblCreateAccStreet = new System.Windows.Forms.Label();
-            this.lblCreateAccPostal = new System.Windows.Forms.Label();
-            this.txtCreateAccName = new System.Windows.Forms.TextBox();
-            this.txtCreateAccSName = new System.Windows.Forms.TextBox();
-            this.txtCreateAccEmail = new System.Windows.Forms.TextBox();
-            this.txtCreateAccPhone = new System.Windows.Forms.TextBox();
-            this.txtCreateAccStreet = new System.Windows.Forms.TextBox();
-            this.txtCreateAccSuburb = new System.Windows.Forms.TextBox();
-            this.txtCreateAccCity = new System.Windows.Forms.TextBox();
-            this.txtCreateAccPostal = new System.Windows.Forms.TextBox();
-            this.btnCreate = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lblCreateAccPhone = new System.Windows.Forms.Label();
+            this.lblCreateAccEmail = new System.Windows.Forms.Label();
+            this.lblCreateAccSName = new System.Windows.Forms.Label();
+            this.lblCreateAccName = new System.Windows.Forms.Label();
             this.CreateAccPanelWood.SuspendLayout();
             this.CreateAccPanelCyan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCreateAccLogo)).BeginInit();
@@ -91,16 +91,6 @@
             this.CreateAccPanelCyan.Size = new System.Drawing.Size(943, 75);
             this.CreateAccPanelCyan.TabIndex = 5;
             // 
-            // lblCreateAccCopyright
-            // 
-            this.lblCreateAccCopyright.AutoSize = true;
-            this.lblCreateAccCopyright.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreateAccCopyright.Location = new System.Drawing.Point(12, 49);
-            this.lblCreateAccCopyright.Name = "lblCreateAccCopyright";
-            this.lblCreateAccCopyright.Size = new System.Drawing.Size(432, 23);
-            this.lblCreateAccCopyright.TabIndex = 0;
-            this.lblCreateAccCopyright.Text = "Copyright © 2024 Hotel Mangement Project";
-            // 
             // pbCreateAccLogo
             // 
             this.pbCreateAccLogo.BackColor = System.Drawing.Color.Transparent;
@@ -112,9 +102,19 @@
             this.pbCreateAccLogo.TabIndex = 7;
             this.pbCreateAccLogo.TabStop = false;
             // 
+            // lblCreateAccCopyright
+            // 
+            this.lblCreateAccCopyright.AutoSize = true;
+            this.lblCreateAccCopyright.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreateAccCopyright.Location = new System.Drawing.Point(12, 49);
+            this.lblCreateAccCopyright.Name = "lblCreateAccCopyright";
+            this.lblCreateAccCopyright.Size = new System.Drawing.Size(432, 23);
+            this.lblCreateAccCopyright.TabIndex = 0;
+            this.lblCreateAccCopyright.Text = "Copyright © 2024 Hotel Mangement Project";
+            // 
             // gbNewAccount
             // 
-            this.gbNewAccount.Controls.Add(this.button1);
+            this.gbNewAccount.Controls.Add(this.btnCreateAccBack);
             this.gbNewAccount.Controls.Add(this.btnCreate);
             this.gbNewAccount.Controls.Add(this.txtCreateAccPhone);
             this.gbNewAccount.Controls.Add(this.txtCreateAccEmail);
@@ -132,45 +132,52 @@
             this.gbNewAccount.TabStop = false;
             this.gbNewAccount.Text = "New Guest Account";
             // 
-            // lblCreateAccName
+            // btnCreateAccBack
             // 
-            this.lblCreateAccName.AutoSize = true;
-            this.lblCreateAccName.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreateAccName.Location = new System.Drawing.Point(18, 47);
-            this.lblCreateAccName.Name = "lblCreateAccName";
-            this.lblCreateAccName.Size = new System.Drawing.Size(76, 23);
-            this.lblCreateAccName.TabIndex = 1;
-            this.lblCreateAccName.Text = "Name:";
+            this.btnCreateAccBack.Location = new System.Drawing.Point(645, 264);
+            this.btnCreateAccBack.Name = "btnCreateAccBack";
+            this.btnCreateAccBack.Size = new System.Drawing.Size(109, 43);
+            this.btnCreateAccBack.TabIndex = 13;
+            this.btnCreateAccBack.Text = "Back";
+            this.btnCreateAccBack.UseVisualStyleBackColor = true;
+            this.btnCreateAccBack.Click += new System.EventHandler(this.button1_Click);
             // 
-            // lblCreateAccSName
+            // btnCreate
             // 
-            this.lblCreateAccSName.AutoSize = true;
-            this.lblCreateAccSName.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreateAccSName.Location = new System.Drawing.Point(18, 97);
-            this.lblCreateAccSName.Name = "lblCreateAccSName";
-            this.lblCreateAccSName.Size = new System.Drawing.Size(101, 23);
-            this.lblCreateAccSName.TabIndex = 2;
-            this.lblCreateAccSName.Text = "Surname:";
+            this.btnCreate.Location = new System.Drawing.Point(779, 264);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(109, 43);
+            this.btnCreate.TabIndex = 12;
+            this.btnCreate.Text = "Create";
+            this.btnCreate.UseVisualStyleBackColor = true;
             // 
-            // lblCreateAccEmail
+            // txtCreateAccPhone
             // 
-            this.lblCreateAccEmail.AutoSize = true;
-            this.lblCreateAccEmail.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreateAccEmail.Location = new System.Drawing.Point(18, 148);
-            this.lblCreateAccEmail.Name = "lblCreateAccEmail";
-            this.lblCreateAccEmail.Size = new System.Drawing.Size(68, 23);
-            this.lblCreateAccEmail.TabIndex = 3;
-            this.lblCreateAccEmail.Text = "Email:";
+            this.txtCreateAccPhone.Location = new System.Drawing.Point(147, 199);
+            this.txtCreateAccPhone.Name = "txtCreateAccPhone";
+            this.txtCreateAccPhone.Size = new System.Drawing.Size(243, 26);
+            this.txtCreateAccPhone.TabIndex = 11;
             // 
-            // lblCreateAccPhone
+            // txtCreateAccEmail
             // 
-            this.lblCreateAccPhone.AutoSize = true;
-            this.lblCreateAccPhone.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreateAccPhone.Location = new System.Drawing.Point(18, 199);
-            this.lblCreateAccPhone.Name = "lblCreateAccPhone";
-            this.lblCreateAccPhone.Size = new System.Drawing.Size(111, 23);
-            this.lblCreateAccPhone.TabIndex = 4;
-            this.lblCreateAccPhone.Text = "Phone No:";
+            this.txtCreateAccEmail.Location = new System.Drawing.Point(147, 145);
+            this.txtCreateAccEmail.Name = "txtCreateAccEmail";
+            this.txtCreateAccEmail.Size = new System.Drawing.Size(243, 26);
+            this.txtCreateAccEmail.TabIndex = 10;
+            // 
+            // txtCreateAccSName
+            // 
+            this.txtCreateAccSName.Location = new System.Drawing.Point(147, 94);
+            this.txtCreateAccSName.Name = "txtCreateAccSName";
+            this.txtCreateAccSName.Size = new System.Drawing.Size(243, 26);
+            this.txtCreateAccSName.TabIndex = 9;
+            // 
+            // txtCreateAccName
+            // 
+            this.txtCreateAccName.Location = new System.Drawing.Point(147, 47);
+            this.txtCreateAccName.Name = "txtCreateAccName";
+            this.txtCreateAccName.Size = new System.Drawing.Size(243, 26);
+            this.txtCreateAccName.TabIndex = 8;
             // 
             // gbAddress
             // 
@@ -188,6 +195,45 @@
             this.gbAddress.TabIndex = 5;
             this.gbAddress.TabStop = false;
             this.gbAddress.Text = "Address:";
+            // 
+            // txtCreateAccPostal
+            // 
+            this.txtCreateAccPostal.Location = new System.Drawing.Point(182, 180);
+            this.txtCreateAccPostal.Name = "txtCreateAccPostal";
+            this.txtCreateAccPostal.Size = new System.Drawing.Size(243, 26);
+            this.txtCreateAccPostal.TabIndex = 17;
+            // 
+            // txtCreateAccCity
+            // 
+            this.txtCreateAccCity.Location = new System.Drawing.Point(182, 129);
+            this.txtCreateAccCity.Name = "txtCreateAccCity";
+            this.txtCreateAccCity.Size = new System.Drawing.Size(243, 26);
+            this.txtCreateAccCity.TabIndex = 16;
+            // 
+            // txtCreateAccSuburb
+            // 
+            this.txtCreateAccSuburb.Location = new System.Drawing.Point(182, 78);
+            this.txtCreateAccSuburb.Name = "txtCreateAccSuburb";
+            this.txtCreateAccSuburb.Size = new System.Drawing.Size(243, 26);
+            this.txtCreateAccSuburb.TabIndex = 15;
+            this.txtCreateAccSuburb.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            // 
+            // txtCreateAccStreet
+            // 
+            this.txtCreateAccStreet.Location = new System.Drawing.Point(182, 31);
+            this.txtCreateAccStreet.Name = "txtCreateAccStreet";
+            this.txtCreateAccStreet.Size = new System.Drawing.Size(243, 26);
+            this.txtCreateAccStreet.TabIndex = 12;
+            // 
+            // lblCreateAccPostal
+            // 
+            this.lblCreateAccPostal.AutoSize = true;
+            this.lblCreateAccPostal.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreateAccPostal.Location = new System.Drawing.Point(6, 183);
+            this.lblCreateAccPostal.Name = "lblCreateAccPostal";
+            this.lblCreateAccPostal.Size = new System.Drawing.Size(134, 23);
+            this.lblCreateAccPostal.TabIndex = 14;
+            this.lblCreateAccPostal.Text = "Postal Code:";
             // 
             // lblCreateAccCity
             // 
@@ -220,90 +266,45 @@
             this.lblCreateAccStreet.TabIndex = 11;
             this.lblCreateAccStreet.Text = "Street Address:";
             // 
-            // lblCreateAccPostal
+            // lblCreateAccPhone
             // 
-            this.lblCreateAccPostal.AutoSize = true;
-            this.lblCreateAccPostal.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreateAccPostal.Location = new System.Drawing.Point(6, 183);
-            this.lblCreateAccPostal.Name = "lblCreateAccPostal";
-            this.lblCreateAccPostal.Size = new System.Drawing.Size(134, 23);
-            this.lblCreateAccPostal.TabIndex = 14;
-            this.lblCreateAccPostal.Text = "Postal Code:";
+            this.lblCreateAccPhone.AutoSize = true;
+            this.lblCreateAccPhone.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreateAccPhone.Location = new System.Drawing.Point(18, 199);
+            this.lblCreateAccPhone.Name = "lblCreateAccPhone";
+            this.lblCreateAccPhone.Size = new System.Drawing.Size(111, 23);
+            this.lblCreateAccPhone.TabIndex = 4;
+            this.lblCreateAccPhone.Text = "Phone No:";
             // 
-            // txtCreateAccName
+            // lblCreateAccEmail
             // 
-            this.txtCreateAccName.Location = new System.Drawing.Point(147, 47);
-            this.txtCreateAccName.Name = "txtCreateAccName";
-            this.txtCreateAccName.Size = new System.Drawing.Size(243, 26);
-            this.txtCreateAccName.TabIndex = 8;
+            this.lblCreateAccEmail.AutoSize = true;
+            this.lblCreateAccEmail.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreateAccEmail.Location = new System.Drawing.Point(18, 148);
+            this.lblCreateAccEmail.Name = "lblCreateAccEmail";
+            this.lblCreateAccEmail.Size = new System.Drawing.Size(68, 23);
+            this.lblCreateAccEmail.TabIndex = 3;
+            this.lblCreateAccEmail.Text = "Email:";
             // 
-            // txtCreateAccSName
+            // lblCreateAccSName
             // 
-            this.txtCreateAccSName.Location = new System.Drawing.Point(147, 94);
-            this.txtCreateAccSName.Name = "txtCreateAccSName";
-            this.txtCreateAccSName.Size = new System.Drawing.Size(243, 26);
-            this.txtCreateAccSName.TabIndex = 9;
+            this.lblCreateAccSName.AutoSize = true;
+            this.lblCreateAccSName.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreateAccSName.Location = new System.Drawing.Point(18, 97);
+            this.lblCreateAccSName.Name = "lblCreateAccSName";
+            this.lblCreateAccSName.Size = new System.Drawing.Size(101, 23);
+            this.lblCreateAccSName.TabIndex = 2;
+            this.lblCreateAccSName.Text = "Surname:";
             // 
-            // txtCreateAccEmail
+            // lblCreateAccName
             // 
-            this.txtCreateAccEmail.Location = new System.Drawing.Point(147, 145);
-            this.txtCreateAccEmail.Name = "txtCreateAccEmail";
-            this.txtCreateAccEmail.Size = new System.Drawing.Size(243, 26);
-            this.txtCreateAccEmail.TabIndex = 10;
-            // 
-            // txtCreateAccPhone
-            // 
-            this.txtCreateAccPhone.Location = new System.Drawing.Point(147, 199);
-            this.txtCreateAccPhone.Name = "txtCreateAccPhone";
-            this.txtCreateAccPhone.Size = new System.Drawing.Size(243, 26);
-            this.txtCreateAccPhone.TabIndex = 11;
-            // 
-            // txtCreateAccStreet
-            // 
-            this.txtCreateAccStreet.Location = new System.Drawing.Point(182, 31);
-            this.txtCreateAccStreet.Name = "txtCreateAccStreet";
-            this.txtCreateAccStreet.Size = new System.Drawing.Size(243, 26);
-            this.txtCreateAccStreet.TabIndex = 12;
-            // 
-            // txtCreateAccSuburb
-            // 
-            this.txtCreateAccSuburb.Location = new System.Drawing.Point(182, 78);
-            this.txtCreateAccSuburb.Name = "txtCreateAccSuburb";
-            this.txtCreateAccSuburb.Size = new System.Drawing.Size(243, 26);
-            this.txtCreateAccSuburb.TabIndex = 15;
-            this.txtCreateAccSuburb.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
-            // 
-            // txtCreateAccCity
-            // 
-            this.txtCreateAccCity.Location = new System.Drawing.Point(182, 129);
-            this.txtCreateAccCity.Name = "txtCreateAccCity";
-            this.txtCreateAccCity.Size = new System.Drawing.Size(243, 26);
-            this.txtCreateAccCity.TabIndex = 16;
-            // 
-            // txtCreateAccPostal
-            // 
-            this.txtCreateAccPostal.Location = new System.Drawing.Point(182, 180);
-            this.txtCreateAccPostal.Name = "txtCreateAccPostal";
-            this.txtCreateAccPostal.Size = new System.Drawing.Size(243, 26);
-            this.txtCreateAccPostal.TabIndex = 17;
-            // 
-            // btnCreate
-            // 
-            this.btnCreate.Location = new System.Drawing.Point(779, 264);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(109, 43);
-            this.btnCreate.TabIndex = 12;
-            this.btnCreate.Text = "Create";
-            this.btnCreate.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(645, 264);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 43);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = true;
+            this.lblCreateAccName.AutoSize = true;
+            this.lblCreateAccName.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreateAccName.Location = new System.Drawing.Point(18, 47);
+            this.lblCreateAccName.Name = "lblCreateAccName";
+            this.lblCreateAccName.Size = new System.Drawing.Size(76, 23);
+            this.lblCreateAccName.TabIndex = 1;
+            this.lblCreateAccName.Text = "Name:";
             // 
             // CreateAccount
             // 
@@ -353,7 +354,7 @@
         private System.Windows.Forms.TextBox txtCreateAccCity;
         private System.Windows.Forms.TextBox txtCreateAccSuburb;
         private System.Windows.Forms.TextBox txtCreateAccStreet;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCreateAccBack;
         private System.Windows.Forms.Button btnCreate;
     }
 }

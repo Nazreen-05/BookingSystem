@@ -31,5 +31,14 @@ namespace BookingSystem.Presentation
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form = new HomePage();
+            form.ShowDialog();
+            this.Show();
+
+        }
     }
 }
