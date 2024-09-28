@@ -9,26 +9,31 @@ namespace BookingSystem.Business
     public class Guest
     {
         #region Data Members
-        private string guestId;
+        private string guestAccNo;
         private string name;
+        private string surname;
         private string address;
         private string phoneNumber;
         private string email;
-        private string creditCardNumber;
-        private string loyaltyCardNumber;
         #endregion
 
         #region Property Methods
-        public string GuestID
+        public string GuestAccNo
         {
-            get { return guestId; }
-            set { guestId = value; }
+            get { return guestAccNo; }
+            set { guestAccNo = value; }
         }
 
         public string Name
         {
             get { return name; }
             set { name = value; }
+        }
+
+        public string Surname
+        {
+            get { return surname; }
+            set { surname = value; }
         }
 
         public string Address
@@ -48,18 +53,6 @@ namespace BookingSystem.Business
             get { return email; }
             set { email = value; }
         }
-
-        public string CreditCardNumber
-        {
-            get { return creditCardNumber; }
-            set { creditCardNumber = value; }
-        }
-
-        public string LoyaltyCardNumber
-        {
-            get { return loyaltyCardNumber; }
-            set { loyaltyCardNumber = value; }
-        }
         #endregion
 
         #region Constructor
@@ -67,15 +60,15 @@ namespace BookingSystem.Business
         {
             //default constructor
         }
-        public Guest(string guestId, string name, string address, string phoneNumber, string email, string creditCardNumber, string loyaltyCardNumber)
+        public Guest(string guestAccNo, string name ,string surname, string address, string phoneNumber, string email)
         {
-            this.guestId = guestId;
+            this.guestAccNo = guestAccNo;
             this.name = name;
+            this.surname = surname;
             this.address = address;
             this.phoneNumber = phoneNumber;
             this.email = email;
-            this.creditCardNumber = creditCardNumber;
-            this.loyaltyCardNumber = loyaltyCardNumber;
+            
         }
         #endregion
 

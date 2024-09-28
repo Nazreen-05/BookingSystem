@@ -46,13 +46,14 @@ namespace BookingSystem
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-           
+            //Error handling - to see if data has been inserted
             if(txtUsername.Text == "" ||  txtPassword.Text == "")
             {
                 MessageBox.Show("Please enter in all required fields", "Missing Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
+                //Error handling - to see if the username and password is correct
                 if (txtUsername.Text.Equals("admin") && txtPassword.Text.Equals("admin"))
                 {
                     this.Hide();
@@ -63,6 +64,7 @@ namespace BookingSystem
                 }
                 else
                 {
+                   //Error message if inseretd login is wrong
                     MessageBox.Show("Incorrect Username or Password. Please try again.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
