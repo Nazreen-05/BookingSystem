@@ -73,6 +73,9 @@
     <Compile Include="Business\RoomRates.cs" />
     <Compile Include="Data\DB.cs" />
     <Compile Include="Data\HotelManagementDB.cs" />
+    <Compile Include="HotelManagementDBDataSet.cs">
+      <DependentUpon>HotelManagementDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="HotelManagementDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

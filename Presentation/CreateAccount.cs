@@ -1,9 +1,11 @@
-﻿using System;
+﻿using BookingSystem.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,6 +14,7 @@ namespace BookingSystem.Presentation
 {
     public partial class CreateAccount : Form
     {
+        private DB db = new DB();
         public CreateAccount()
         {
             InitializeComponent();
@@ -58,11 +61,64 @@ namespace BookingSystem.Presentation
                 else
                 {
                    //Creating unique IDs for a primary key in the guest table
-                    Random random = new Random();
-                    int ran = random.Next(100000, 1000000);
-                    string accNo = ran.ToString();
+                    string accNo = GenerateUniqueAccountNumber();
+
+                    //Guest details
+                    string guestName = txtCreateAccName.Text;
+                    string guestSName = txtCreateAccSName.Text;
+                    string guestEmail = txtCreateAccEmail.Text;
+                    string guestPhoneNo = txtCreateAccPhone.Text;
+                    string street = txtCreateAccStreet.Text;
+                    string suburb = txtCreateAccSuburb.Text;
+                    string city = txtCreateAccCity.Text;
+                    string postal = txtCreateAccPostal.Text;
+                    string guestAddress = street + ", " + suburb+ ", " + city + ", " + postal;
+
+                    if (accNo != null)
+                    {
+                        // Add guest to the database using the DB class
+                        bool isAdded = db.AddGuest(accNo, guestName, guestSName, guestEmail, guestPhoneNo, guestAddress);
+
+                        if (isAdded)
+                        {
+                            MessageBox.Show($"Guest added successfully with Account Number: {accNo}","Succesfully Added",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to add guest.", "Error Occurred", MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to generate a unique account number.","Error Occurred", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
+
             }
         }
+        #region Methods
+        private string GenerateUniqueAccountNumber()
+        {
+            Random random = new Random();
+            string accountNumber;
+            bool isUnique = false;
+
+            while (!isUnique)
+            {
+                // Generate a random 6-digit number
+                accountNumber = random.Next(100000, 1000000).ToString();
+
+                // Check if the account number is unique
+                if (db.IsAccountNumberUnique(accountNumber))
+                {
+                    isUnique = true;
+                    return accountNumber;
+                }
+            }
+
+            return null; // This return statement will never be reached, it's just to satisfy the compiler
+        }
+
+        #endregion
     }
 }

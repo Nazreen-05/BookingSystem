@@ -86,6 +86,76 @@ namespace BookingSystem.Data
         }
         #endregion
 
+        #region Check Account Number is Unique
+        // Method to check if the account number is unique
+        public bool IsAccountNumberUnique(string accountNumber)
+        {
+            string query = "SELECT COUNT(*) FROM Guests WHERE guestAccNo = @guestAccNo";
+            using (SqlCommand command = new SqlCommand(query, cnMain))
+            {
+                command.Parameters.AddWithValue("@guestAccNo", accountNumber);
+
+                try
+                {
+                    cnMain.Open();
+                    int count = (int)command.ExecuteScalar();
+                    cnMain.Close();
+                    return count == 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error checking account number uniqueness: " + ex.Message);
+                    return false;
+                }
+                finally
+                {
+                    if (cnMain.State == ConnectionState.Open)
+                    {
+                        cnMain.Close();
+                    }
+                }
+            }
+        }
+        #endregion
+
+        #region Add Guest to Database
+        // Method to add a guest to the database
+        public bool AddGuest(string guestAccNo, string guestName, string guestSName, string guestEmail, string guestPhoneNo, string guestAddress)
+        {
+            string query = "INSERT INTO Guests (guestAccNo, guestName, guestSName, guestEmail, guestPhoneNo, guestAddress) " +
+                           "VALUES (@guestAccNo, @guestName, @guestSName, @guestEmail, @guestPhoneNo, @guestAddress)";
+            using (SqlCommand command = new SqlCommand(query, cnMain))
+            {
+                command.Parameters.AddWithValue("@guestAccNo", guestAccNo);
+                command.Parameters.AddWithValue("@guestName", guestName);
+                command.Parameters.AddWithValue("@guestSName", guestSName);
+                command.Parameters.AddWithValue("@guestEmail", guestEmail);
+                command.Parameters.AddWithValue("@guestPhoneNo", guestPhoneNo);
+                command.Parameters.AddWithValue("@guestAddress", guestAddress);
+
+                try
+                {
+                    cnMain.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error adding guest: " + ex.Message);
+                    return false;
+                }
+                finally
+                {
+                    if (cnMain.State == ConnectionState.Open)
+                    {
+                        cnMain.Close();
+                    }
+                }
+            }
+        }
+        #endregion
+
+
         public enum DBOperation
         {
             Add,
