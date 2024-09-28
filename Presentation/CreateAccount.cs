@@ -54,7 +54,7 @@ namespace BookingSystem.Presentation
             else
             {
                 //Error Handling - making sure the phone number is a valid number
-                if (txtCreateAccPhone.TextLength != 9)
+                if (txtCreateAccPhone.TextLength != 10)
                 {
                     MessageBox.Show("Please enter a valid Phone Number", "Invalid Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -82,6 +82,14 @@ namespace BookingSystem.Presentation
                         if (isAdded)
                         {
                             MessageBox.Show($"Guest added successfully with Account Number: {accNo}","Succesfully Added",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtCreateAccName.Clear();
+                            txtCreateAccSName.Clear();
+                            txtCreateAccEmail.Clear();
+                            txtCreateAccPhone.Clear();
+                            txtCreateAccStreet.Clear();
+                            txtCreateAccSuburb.Clear();
+                            txtCreateAccCity.Clear();
+                            txtCreateAccPostal.Clear();
                         }
                         else
                         {

@@ -120,13 +120,11 @@ namespace BookingSystem.Data
                         if (!(row.RowState == DataRowState.Deleted))
                         {
                             Guest guest = new Guest();
-                            guest.GuestID = row["guest_id"].ToString().Trim();
+                            guest.GuestAccNo = row["guest_id"].ToString().Trim();
                             guest.Name = row["name"].ToString().Trim();
                             guest.Address = row["address"].ToString().Trim();
                             guest.PhoneNumber = row["phone_number"].ToString().Trim();
                             guest.Email = row["email"].ToString().Trim();
-                            guest.CreditCardNumber = row["credit_card_number"].ToString().Trim();
-                            guest.LoyaltyCardNumber = row["loyalty_card_number"].ToString().Trim();
                             guests.Add(guest);
                         }
                     }
@@ -183,7 +181,7 @@ namespace BookingSystem.Data
 
                     // Determine the ID to search based on the object type
                     if (obj is Guest guest)
-                        id = guest.GuestID;
+                        id = guest.GuestAccNo;
                     else if (obj is Booking booking)
                         id = booking.BookingID;
                     else if (obj is Payment payment)
@@ -205,13 +203,11 @@ namespace BookingSystem.Data
         {
             if (obj is Guest guest)
             {
-                aRow["guest_id"] = guest.GuestID;
+                aRow["guest_id"] = guest.GuestAccNo;
                 aRow["name"] = guest.Name;
                 aRow["address"] = guest.Address;
                 aRow["phone_number"] = guest.PhoneNumber;
                 aRow["email"] = guest.Email;
-                aRow["credit_card_number"] = guest.CreditCardNumber;
-                
                 
             }
             else if (obj is Booking booking)

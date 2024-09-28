@@ -70,16 +70,16 @@ namespace BookingSystem.Business
 
         #region Search Methods
         // Find a guest by ID
-        public Guest Find(string guestID)
+        public Guest Find(string guestAccNo)
         {
             int index = 0;
-            bool found = (guests.Count > 0 && guests[index].GuestID == guestID);
+            bool found = (guests.Count > 0 && guests[index].GuestAccNo == guestAccNo);
             int count = guests.Count;
 
             while (!(found) && (index < guests.Count - 1))
             {
                 index++;
-                found = (guests[index].GuestID == guestID);
+                found = (guests[index].GuestAccNo == guestAccNo);
             }
             return guests[index];
         }
@@ -89,11 +89,11 @@ namespace BookingSystem.Business
         {
             int counter = 0;
             bool found = false;
-            found = (aGuest.GuestID == guests[counter].GuestID);
+            found = (aGuest.GuestAccNo == guests[counter].GuestAccNo);
             while (!found && counter < guests.Count)
             {
                 counter++;
-                found = (aGuest.GuestID == guests[counter].GuestID);
+                found = (aGuest.GuestAccNo == guests[counter].GuestAccNo);
             }
             if (found)
             {

@@ -96,7 +96,10 @@ namespace BookingSystem.Presentation
 
         private void label1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            var form = new LoginPage();
+            form.ShowDialog();
+            this.Show();
             
         }
     }
