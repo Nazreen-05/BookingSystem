@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookingSystem.Business;
 
 
 namespace BookingSystem.Data
@@ -122,6 +123,7 @@ namespace BookingSystem.Data
         // Method to add a guest to the database
         public bool AddGuest(string guestAccNo, string guestName, string guestSName, string guestEmail, string guestPhoneNo, string guestAddress)
         {
+        
             string query = "INSERT INTO Guests (guestAccNo, guestName, guestSName, guestEmail, guestPhoneNo, guestAddress) " +
                            "VALUES (@guestAccNo, @guestName, @guestSName, @guestEmail, @guestPhoneNo, @guestAddress)";
             using (SqlCommand command = new SqlCommand(query, cnMain))
@@ -138,6 +140,7 @@ namespace BookingSystem.Data
                     cnMain.Open();
                     int rowsAffected = command.ExecuteNonQuery();
                     return rowsAffected > 0;
+                 
                 }
                 catch (Exception ex)
                 {

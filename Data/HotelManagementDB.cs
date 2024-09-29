@@ -102,11 +102,11 @@ namespace BookingSystem.Data
                         {
                             Booking aBooking = new Booking();
                             aBooking.BookingID = row["booking_id"].ToString().Trim();
-                            aBooking.GuestID = row["guest_id"].ToString().Trim();
+                            aBooking.GuestAccNo = row["guestAccNo"].ToString().Trim();
                             aBooking.CheckInDate = Convert.ToDateTime(row["check_in_date"]);
                             aBooking.CheckOutDate = Convert.ToDateTime(row["check_out_date"]);
                             aBooking.TotalCost = Convert.ToDecimal(row["total_cost"]);
-                            aBooking.DepositPaid = Convert.ToDecimal(row["deposit_paid"]);
+                            aBooking.DepositPaid = row["deposit_Paid"].ToString().Trim();
                             aBooking.BookingStatus = row["booking_status"].ToString().Trim();
                             aBooking.Season = row["season"].ToString().Trim();
                             bookings.Add(aBooking);
@@ -203,17 +203,17 @@ namespace BookingSystem.Data
         {
             if (obj is Guest guest)
             {
-                aRow["guest_id"] = guest.GuestAccNo;
-                aRow["name"] = guest.Name;
-                aRow["address"] = guest.Address;
-                aRow["phone_number"] = guest.PhoneNumber;
-                aRow["email"] = guest.Email;
-                
+                aRow["guestAccNo"] = guest.GuestAccNo;
+                aRow["guestName"] = guest.Name;
+                aRow["guestSurname"] = guest.Surname;
+                aRow["guestPhoneNo"] = guest.PhoneNumber;
+                aRow["guestEmail"] = guest.Email;
+                aRow["guestAddress"] = guest.Address;
             }
             else if (obj is Booking booking)
             {
                 aRow["booking_id"] = booking.BookingID;
-                aRow["guest_id"] = booking.GuestID;
+                aRow["guest_AccNo"] = booking.GuestAccNo;
                 aRow["check_in_date"] = booking.CheckInDate;
                 aRow["check_out_date"] = booking.CheckOutDate;
                 aRow["total_cost"] = booking.TotalCost;
@@ -286,8 +286,14 @@ namespace BookingSystem.Data
                     break;
             }
         }
+
+
         #endregion
 
+        public void AddBooking(Booking newBooking)
+        {
+            DataSetChange(newBooking, DB.DBOperation.Add);
+        }
 
 
 
@@ -299,7 +305,7 @@ namespace BookingSystem.Data
             param = new SqlParameter("@booking_id", SqlDbType.NVarChar, 15, "booking_id");
             daMain.InsertCommand.Parameters.Add(param);//Add the parameter to the Parameters collection.
 
-            param = new SqlParameter("@guest_id", SqlDbType.NVarChar, 10, "guest_id");
+            param = new SqlParameter("@guestAccNo", SqlDbType.NVarChar, 10, "guestAccNo");
             daMain.InsertCommand.Parameters.Add(param);
 
             param = new SqlParameter("@booking_date", SqlDbType.DateTime, 10, "booking_date");
@@ -314,7 +320,7 @@ namespace BookingSystem.Data
             param = new SqlParameter("@total_cost", SqlDbType.Money, 8, "total_cost");
             daMain.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@deposit_paid", SqlDbType.Money, 8, "deposit_paid");
+            param = new SqlParameter("@deposit_paid", SqlDbType.NVarChar, 8, "deposit_paid");
             daMain.InsertCommand.Parameters.Add(param);
 
             param = new SqlParameter("@booking_status", SqlDbType.NVarChar, 15, "booking_status");
@@ -330,7 +336,7 @@ namespace BookingSystem.Data
         {
             //Create the command that must be used to insert values into the Books table..
 
-            //please insert code here , with correct properties
+            daMain.InsertCommand = new SqlCommand("INSERT INTO  (booking_id, guestAccNo, check_in_date, check_out_date, total_cost, deposit_paid, booking_status, season) VALUES (@booking_id, @guestAccNo, @check_in_date, @check_out_date, @total_cost, @deposit_paid, @booking_status, @season)", cnMain);
             Build_INSERT_Parameters(aBooking);
         }
 
@@ -345,22 +351,22 @@ namespace BookingSystem.Data
             //Create Parameters to communicate with SQL INSERT...add the input parameter and set its properties.
             //please insert code here , with correct properties
             SqlParameter param = default(SqlParameter);
-            param = new SqlParameter("@guest_ID", SqlDbType.NVarChar, 15, "guest_ID");
+            param = new SqlParameter("@guest_AccNo", SqlDbType.NVarChar, 10, "guestAccNo");
             daMain.InsertCommand.Parameters.Add(param);//Add the parameter to the Parameters collection.
 
-            param = new SqlParameter("@name", SqlDbType.NVarChar, 10, "name");
+            param = new SqlParameter("@guestName", SqlDbType.NVarChar, 100, "guestName");
             daMain.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@address", SqlDbType.DateTime, 10, "address");
+            param = new SqlParameter("@guestSurname", SqlDbType.NVarChar, 100, "guestSurname");
             daMain.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@phone_number", SqlDbType.DateTime, 10, "phone_number");
+            param = new SqlParameter("@guestEmail", SqlDbType.NVarChar, 100, "guestEmail");
             daMain.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@email", SqlDbType.DateTime, 10, "email");
+            param = new SqlParameter("@guestPhoneNo", SqlDbType.NVarChar, 100, "guestPhoneNo");
             daMain.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@credit_card_number", SqlDbType.Money, 8, "credit_card_number");
+            param = new SqlParameter("@guestAddress", SqlDbType.NVarChar, 255, "guestAddress");
             daMain.InsertCommand.Parameters.Add(param);
 
            
@@ -371,8 +377,8 @@ namespace BookingSystem.Data
         private void Create_INSERT_Command(Guest aGuest)
         {
             //Create the command that must be used to insert values into the Books table..
-
-            //please insert code here , with correct properties
+        
+            daMain.InsertCommand = new SqlCommand("INSERT INTO guests (guestAccNo, guestName, guestSurname, guestEmail, guestPhoneNo, guestAddress) VALUES (@guestAccNo, @guestName, @guestSurname, @ guestEmail, @guestPhoneNo, @guestAddress)", cnMain);
             Build_INSERT_Parameters(aGuest);
         }
 

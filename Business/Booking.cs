@@ -11,14 +11,14 @@ namespace BookingSystem.Business
     {
         #region Data Members
         private string bookingId;
-        private string guestId;
+        private string guestAccNo;
         private DateTime checkInDate;
         private DateTime checkOutDate;
         private string bookingStatus;
         private string season;
         private DateTime bookingDate;
         private decimal totalCost;
-        private decimal depositPaid;
+        private string depositPaid;
         #endregion
 
         #region Property Methods
@@ -28,10 +28,10 @@ namespace BookingSystem.Business
             set { bookingId = value; }
         }
 
-        public string GuestID
+        public string GuestAccNo
         {
-            get { return guestId; }
-            set { guestId = value; }
+            get { return guestAccNo; }
+            set { guestAccNo = value; }
         }
 
         public DateTime CheckInDate
@@ -72,7 +72,7 @@ namespace BookingSystem.Business
             set { totalCost = value; }
         }
 
-        public decimal DepositPaid
+        public string DepositPaid
         {
             get { return depositPaid; }
             set { depositPaid = value; }
@@ -85,10 +85,10 @@ namespace BookingSystem.Business
             //default constructor
         }
         // Constructor including the new fields
-        public Booking(string bookingId, string guestId, DateTime bookingDate, DateTime checkInDate, DateTime checkOutDate, decimal totalCost, decimal depositPaid, string bookingStatus, string season)
+        public Booking(string bookingId, string guestAccNo, DateTime bookingDate, DateTime checkInDate, DateTime checkOutDate, decimal totalCost, string depositPaid, string bookingStatus, string season)
         {
             this.bookingId = bookingId;
-            this.guestId = guestId;
+            this.guestAccNo = guestAccNo;
             this.bookingDate = bookingDate;
             this.checkInDate = checkInDate;
             this.checkOutDate = checkOutDate;

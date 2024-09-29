@@ -14,10 +14,12 @@ namespace BookingSystem.Presentation
 {
     public partial class CreateAccount : Form
     {
-        private DB db = new DB();
-        public CreateAccount()
+        //  private DB db = new DB();
+          private HotelManagementDB DB;
+        public CreateAccount(HotelManagementDB db)
         {
             InitializeComponent();
+            DB = db;
         }
 
         private void CreateAccount_Load(object sender, EventArgs e)
@@ -37,10 +39,10 @@ namespace BookingSystem.Presentation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var form = new HomePage();
+           /* this.Hide();
+            var form = new HomePage(DB);
             form.ShowDialog();
-            this.Show();
+            this.Show();*/
 
         }
 
@@ -77,7 +79,7 @@ namespace BookingSystem.Presentation
                     if (accNo != null)
                     {
                         // Add guest to the database using the DB class
-                        bool isAdded = db.AddGuest(accNo, guestName, guestSName, guestEmail, guestPhoneNo, guestAddress);
+                        bool isAdded = DB.AddGuest(accNo, guestName, guestSName, guestEmail, guestPhoneNo, guestAddress);
 
                         if (isAdded)
                         {
@@ -117,7 +119,7 @@ namespace BookingSystem.Presentation
                 accountNumber = random.Next(100000, 1000000).ToString();
 
                 // Check if the account number is unique
-                if (db.IsAccountNumberUnique(accountNumber))
+                if (DB.IsAccountNumberUnique(accountNumber))
                 {
                     isUnique = true;
                     return accountNumber;

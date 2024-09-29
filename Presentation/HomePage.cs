@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BookingSystem.Business;
+using BookingSystem.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,13 @@ namespace BookingSystem.Presentation
 {
     public partial class HomePage : Form
     {
+        private HotelManagementDB DB;
+        private BookingController bookingController;
+     
         public HomePage()
         {
             InitializeComponent();
+          
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -48,7 +54,7 @@ namespace BookingSystem.Presentation
         {
             MovePanel(btnAddBooking);
             this.Hide();
-            var form = new BookingForm();
+            var form = new BookingForm(bookingController);
             form.ShowDialog();
             this.Show();
         }
@@ -66,7 +72,7 @@ namespace BookingSystem.Presentation
         {
             MovePanel (btnAddGuest);
             this.Hide();
-            var form = new CreateAccount();
+            var form = new CreateAccount(DB);
             form.ShowDialog();
             this.Show();
         }

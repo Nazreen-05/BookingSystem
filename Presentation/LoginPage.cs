@@ -1,4 +1,6 @@
-﻿using BookingSystem.Presentation;
+﻿using BookingSystem.Business;
+using BookingSystem.Data;
+using BookingSystem.Presentation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +15,12 @@ namespace BookingSystem
 {
     public partial class LoginPage : Form
     {
+       
         public LoginPage()
         {
             InitializeComponent();
             txtPassword.UseSystemPasswordChar = true;
+           
         }
 
         private void pictureBoxShow_Click(object sender, EventArgs e)
